@@ -13,7 +13,7 @@ about:
       href: https://github.com/anaelDelorme
 ---
 
-Salut ! Je suis **Anaël Delorme**, j'aime l'aquaculture et les statistiques. Aujourd'hui j'ai a troqué les algues et les huîtres pour les octets et les pixels. 🐟💻
+Salut ! Je suis **Anaël Delorme**, j'aime l'aquaculture et les statistiques. Aujourd'hui j'ai troqué les algues et les huîtres pour les octets et les pixels. 🐟💻
 
 Quand je ne suis pas en train de simplifier les démarches administratives aquacoles (oui, c'est un boulot et quelqu'un doit le faire), je développe des sites web qui sont aussi frais et dynamiques que le marché du poisson un lundi matin !
 

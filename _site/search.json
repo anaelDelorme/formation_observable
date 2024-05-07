@@ -9,15 +9,29 @@
   {
     "objectID": "compte_observable.html",
     "href": "compte_observable.html",
-    "title": "Pré-requis : création d’un compte Observable",
+    "title": "Création d’un compte Observable",
     "section": "",
-    "text": "C’est tr"
+    "text": "C’est très facile :\n\nAller sur le site Observable\n\nCliquer sur le bouton “Try it for free” ou en haut à droite sur “Sign up” \nSoit vous utiliser votre Email professionnel, soit mon compte perso Google\n\nCliquer sur le lien reçu par mail\n\nIndiquer votre nom et sélectionner “For work” \n\nCliquer sur “Create your account”\n\nCliquer sur “Create new workspace”\n\nDonner le nom “Formation interne”\n\nPour l’URL vous pouvez mettre votre nom et formation interne, tout accroché. Ex : delormeformationinterne\n\nChoisir Starter \n\nCliquer sur “Continue”\n\nVous arrivez sur cette page : \n\n\n\n\n\n\nImportant\n\n\n\nSi vous souhaitez faire des notebooks interactifs, vous pouvez vous arrêter là et allez directement à Observable Notebook.\nPour utiliser framework afin de créer des sites de tableaux de bords, continuez avec la création d’un compte Github.\n\n\n\nSuivant"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Formation Observable au SSP",
     "section": "",
-    "text": "Observable est bien plus qu’une simple plateforme de visualisation. C’est votre billet pour l’univers des données dynamiques :\n\nCréez sans limites: visualisations interactives, des 📊 graphiques animés et des tableaux de bord personnalisés.\nRévolutionnez votre flux de travail:\n\nFini les tableaux statiques ! Observable vous permet de créer des notebooks interactifs. Imaginez un cahier de laboratoire où vos données prennent vie.\nCollaborez avec vos collègues en temps réel, partagez vos découvertes et échangez des idées.\n\n\n✨La magie du dernier kilomètre : ✨\n\nVous avez collecté vos données avec CApibara et les avez traitées en R.\nMaintenant, c’est le moment crucial : comment les présenter ? Observable est votre réponse. Créez des visualisations percutantes pour convaincre votre public.\n\n\nLa formation est prévue en 4 étapes :\n\nPré-requis: tout le nécessaire pour commencer en Observable.\nObservable Framework: Plongez dans Observable framework et créez vos premiers tableaux de bord web.\nNotebook Observable: Créez vos premiers notebooks interactifs.\nQuarto: Intégrez du code observable dans vos documents Quarto.\n\nAlors, prêts à explorer Observable ? 🌟\n\n\n\nGénérée par Copilot"
+    "text": "Observable est bien plus qu’une simple plateforme de visualisation. C’est votre billet pour l’univers des données dynamiques :\n\nCréez sans limites: visualisations interactives, des 📊 graphiques animés et des tableaux de bord personnalisés.\nRévolutionnez votre flux de travail:\n\nFini les tableaux statiques ! Observable vous permet de créer des notebooks interactifs. Imaginez un cahier de laboratoire où vos données prennent vie.\nCollaborez avec vos collègues en temps réel, partagez vos découvertes et échangez des idées.\n\n\n✨La magie du dernier kilomètre : ✨\n\nVous avez collecté vos données avec Capibara et les avez traitées en R.\nMaintenant, c’est le moment crucial : comment les présenter ? Observable est votre réponse. Créez des visualisations percutantes pour convaincre votre public.\n\n\nLa formation est prévue en 4 étapes :\n\nPré-requis: tout le nécessaire pour commencer en Observable.\nObservable Framework: Plongez dans Observable framework et créez vos premiers tableaux de bord web.\nNotebook Observable: Créez vos premiers notebooks interactifs.\nQuarto: Intégrez du code observable dans vos documents Quarto.\n\nAlors, prêts à explorer Observable ? 🌟\n\n\n\nGénérée par Copilot"
+  },
+  {
+    "objectID": "github.html",
+    "href": "github.html",
+    "title": "Création d’un compte Github",
+    "section": "",
+    "text": "Création d’un compte"
+  },
+  {
+    "objectID": "github.html#création-dun-compte",
+    "href": "github.html#création-dun-compte",
+    "title": "Création d’un compte Github",
+    "section": "Création d’un compte",
+    "text": "Création d’un compte"
   }
 ]

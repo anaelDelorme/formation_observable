@@ -13,7 +13,7 @@ Observable est bien plus qu'une simple plateforme de visualisation. C'est votre 
 
     -   Collaborez avec vos collègues en temps réel, partagez vos découvertes et échangez des idées.\
 3.  **✨La magie du dernier kilomètre : ✨**
-    -   Vous avez collecté vos données avec CApibara et les avez traitées en R.
+    -   Vous avez collecté vos données avec Capibara et les avez traitées en R.
 
     -   Maintenant, c'est le moment crucial : comment les présenter ? Observable est votre réponse. Créez des visualisations percutantes pour convaincre votre public.
 

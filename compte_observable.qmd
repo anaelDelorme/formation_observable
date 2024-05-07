@@ -1,7 +1,33 @@
 ---
-title: "Pré-requis : création d'un compte Observable"
+title: "Création d'un compte Observable"
 ---
 
 Pour bénéficier au maximum des fonctionnalités d'observable, vous devez vous créer un compte (gratuit). C'est indispensable pour héberger les notebooks et pour déployer vos projets de tableaux de bord (1 projet gratuit).   
 
-C'est tr
+C'est très facile :     
+
+-   Aller sur le site [Observable](https://observablehq.com/ "Site web d'Observable")    
+-   Cliquer sur le bouton **"Try it for free"** ou en haut à droite sur **"Sign up"  ** 
+-   Soit vous utiliser votre Email professionnel, soit mon compte perso Google    
+-   Cliquer sur le lien reçu par mail       
+-   Indiquer votre nom et sélectionner **"For work"   **    
+-   Cliquer sur **"Create your account"**       
+-   Cliquer sur **"Create new workspace"**    
+-   Donner le nom **"Formation interne"**       
+-   Pour l'URL vous pouvez mettre votre nom et formation interne, tout accroché. Ex : delormeformationinterne   
+-   Choisir **Starter  **     
+-   Cliquer sur **"Continue"**    
+
+Vous arrivez sur cette page : 
+![Accueil Observable](img/accueil_observable.png){fig-align="center"}
+
+:::{.callout-important}
+Si vous souhaitez faire des notebooks interactifs, vous pouvez vous arrêter là et allez directement à [Observable Notebook](presentation_notebook.qmd).   
+Pour utiliser framework afin de créer des sites de tableaux de bords, continuez avec la création d'un compte [Github](github.qmd).
+:::
+
+
+<button type="button" class="btn btn-primary btn-lg">
+  <a href="github.qmd">Suivant</a>
+</button>
+
