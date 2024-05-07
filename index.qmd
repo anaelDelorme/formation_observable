@@ -1,11 +1,29 @@
 ---
-title: "empty_website"
+title: "Formation Observable au SSP"
+sidebar: false
 ---
 
-This is a Quarto website.
+Vous cherchez à donner vie à vos données ? À créer des visualisations interactives qui captivent votre public ? Ne cherchez pas plus loin ! [Observable](https://observablehq.com/framework/ "Site web d'Observable") est là pour vous.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Observable est bien plus qu'une simple plateforme de visualisation. C'est votre billet pour l'univers des données dynamiques :
 
-```{r}
-1 + 1
-```
+1.  **Créez sans limites**: visualisations interactives, des 📊 graphiques animés et des tableaux de bord personnalisés.
+2.  Révolutionnez votre flux de travail:
+    -   Fini les tableaux statiques ! Observable vous permet de créer des notebooks interactifs. Imaginez un cahier de laboratoire où vos données prennent vie.
+
+    -   Collaborez avec vos collègues en temps réel, partagez vos découvertes et échangez des idées.\
+3.  **✨La magie du dernier kilomètre : ✨**
+    -   Vous avez collecté vos données avec CApibara et les avez traitées en R.
+
+    -   Maintenant, c'est le moment crucial : comment les présenter ? Observable est votre réponse. Créez des visualisations percutantes pour convaincre votre public.
+
+La formation est prévue en 4 étapes :
+
+-   Pré-requis: tout le nécessaire pour commencer en Observable.
+-   Observable Framework: Plongez dans Observable framework et créez vos premiers tableaux de bord web.
+-   Notebook Observable: Créez vos premiers notebooks interactifs.
+-   Quarto: Intégrez du code observable dans vos documents Quarto.
+
+Alors, prêts à explorer Observable ? 🌟
+
+[![Générée par Copilot](dataViz_agri.jpg){fig-align="center"}](https://copilot.microsoft.com/)

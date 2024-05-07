@@ -1,9 +1,24 @@
 ---
-title: "About"
+title: "Anaël Delorme"
+sidebar: false
+about:
+  template: jolla
+  image: anael_avatar.png
+  links:
+    - icon: linkedin
+      text: Linkedin
+      href: https://www.linkedin.com/in/ana%C3%ABl-delorme-573b8858/
+    - icon: github
+      text: Github
+      href: https://github.com/anaelDelorme
 ---
 
-About this site
+Salut ! Je suis **Anaël Delorme**, j'aime l'aquaculture et les statistiques. Aujourd'hui j'ai a troqué les algues et les huîtres pour les octets et les pixels. 🐟💻
 
-```{r}
-1 + 1
-```
+Quand je ne suis pas en train de simplifier les démarches administratives aquacoles (oui, c'est un boulot et quelqu'un doit le faire), je développe des sites web qui sont aussi frais et dynamiques que le marché du poisson un lundi matin !
+
+Je suis un ingénieur en Agriculture et Environnement de formation, mais aujourd'hui, je plonge dans le monde numérique pour créer des expériences d'apprentissage interactives sur Observable. Mon objectif ? Rendre l'apprentissage aussi captivant qu'une marée haute en Bretagne !
+
+Alors, prêt à naviguer dans le monde fascinant de la data avec moi ? Attachez vos ceintures de sécurité, car ça va être une aventure palpitante, avec moins de risques de se mouiller ! 🚀🌊
+
+*Ce texte a été généré par Microsoft Copilot, en recherchant "Qui est Anaël Delorme ?"*

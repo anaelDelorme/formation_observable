@@ -2,16 +2,63 @@ project:
   type: website
 
 website:
-  title: "empty_website"
+  title: "Formation Observable"
+  favicon: logo.png
+  back-to-top-navigation: true
+  repo-url: https://github.com/anaelDelorme/formation_observable
+  repo-actions: [edit, issue]
   navbar:
+    background: primary
+    search: true
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Accueil"
+      - href: compte_observable.qmd
+        text: "Formation"
+      - href: about.qmd
+        text: "A propos"
+      - href: sources.qmd
+        text: "Sources"
+    right:
+      - icon: github
+        menu:
+          - text: Source
+            href:  https://github.com/anaelDelorme/formation_observable
+          - text: Rapporter un Bug
+            href:  https://github.com/anaelDelorme/formation_observable/issues
+  sidebar:
+    - title: "Formation"
+      style: "docked"
+      search: true
+      contents:
+        - section: "Pré-requis"
+          contents:
+            - compte_observable.qmd
+            - github.qmd
+        - text: "---"
+        - section: "Observable Framework"
+          contents:
+            - presentation_framework.qmd
+            - creer_premier_projet.qmd
+        - text: "---"
+        - section: "Observable Notebook"
+          contents:
+            - presentation_notebook.qmd
+            - creer_premier_notebook.qmd
+        - text: "---"
+        - section: "Observable Quarto"
+          contents:
+            - presentation_quarto_observable.qmd
+            - creer_premier_quarto_observable.qmd
+  page-footer: 
+    left: "Copyleft 2024, Anaël Delorme" 
+    right: "Ministère de l'Agriculture et de la Souveraineté alimentaire - SSP "
 
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
     

@@ -2,15 +2,22 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Anaël Delorme",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "text": "Quand je ne suis pas en train de simplifier les démarches administratives aquacoles (oui, c’est un boulot et quelqu’un doit le faire), je développe des sites web qui sont aussi frais et dynamiques que le marché du poisson un lundi matin !\nJe suis un ingénieur en Agriculture et Environnement de formation, mais aujourd’hui, je plonge dans le monde numérique pour créer des expériences d’apprentissage interactives sur Observable. Mon objectif ? Rendre l’apprentissage aussi captivant qu’une marée haute en Bretagne !\nAlors, prêt à naviguer dans le monde fascinant de la data avec moi ? Attachez vos ceintures de sécurité, car ça va être une aventure palpitante, avec moins de risques de se mouiller ! 🚀🌊\nCe texte a été généré par Microsoft Copilot, en recherchant “Qui est Anaël Delorme ?”"
+  },
+  {
+    "objectID": "compte_observable.html",
+    "href": "compte_observable.html",
+    "title": "Pré-requis : création d’un compte Observable",
+    "section": "",
+    "text": "C’est tr"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "empty_website",
+    "title": "Formation Observable au SSP",
     "section": "",
-    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Observable est bien plus qu’une simple plateforme de visualisation. C’est votre billet pour l’univers des données dynamiques :\n\nCréez sans limites: visualisations interactives, des 📊 graphiques animés et des tableaux de bord personnalisés.\nRévolutionnez votre flux de travail:\n\nFini les tableaux statiques ! Observable vous permet de créer des notebooks interactifs. Imaginez un cahier de laboratoire où vos données prennent vie.\nCollaborez avec vos collègues en temps réel, partagez vos découvertes et échangez des idées.\n\n\n✨La magie du dernier kilomètre : ✨\n\nVous avez collecté vos données avec CApibara et les avez traitées en R.\nMaintenant, c’est le moment crucial : comment les présenter ? Observable est votre réponse. Créez des visualisations percutantes pour convaincre votre public.\n\n\nLa formation est prévue en 4 étapes :\n\nPré-requis: tout le nécessaire pour commencer en Observable.\nObservable Framework: Plongez dans Observable framework et créez vos premiers tableaux de bord web.\nNotebook Observable: Créez vos premiers notebooks interactifs.\nQuarto: Intégrez du code observable dans vos documents Quarto.\n\nAlors, prêts à explorer Observable ? 🌟\n\n\n\nGénérée par Copilot"
   }
 ]
