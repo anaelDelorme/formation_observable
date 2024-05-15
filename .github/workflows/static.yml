@@ -39,6 +39,11 @@ jobs:
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Install R packages
+        run: |
+          install.packages(c("knitr", "rmarkdown"))
+        shell: Rscript {0}
         
       - name: Setup Pages
         uses: actions/configure-pages@v2
