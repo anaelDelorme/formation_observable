@@ -37,10 +37,11 @@ jobs:
       - name: Install Jupyter
         run: python3 -m pip install jupyter
 
-      - name: Install R packages
+      - name: Install R packages 
         run: |
-          install.packages(c("knitr", "rmarkdown"))
-        shell: Rscript {0}
+          mkdir -p ~/R_libs
+          R -e "install.packages(c('knitr', 'rmarkdown'), repos='https://cloud.r-project.org', lib='~/R_libs')"
+          echo "R_LIBS_USER=~/R_libs" >> $GITHUB_ENV
 
       - name: Render
         uses: quarto-dev/quarto-actions/render@v2
