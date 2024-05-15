@@ -37,13 +37,13 @@ jobs:
       - name: Install Jupyter
         run: python3 -m pip install jupyter
 
-      - name: Render
-        uses: quarto-dev/quarto-actions/render@v2
-
       - name: Install R packages
         run: |
           install.packages(c("knitr", "rmarkdown"))
         shell: Rscript {0}
+
+      - name: Render
+        uses: quarto-dev/quarto-actions/render@v2
         
       - name: Setup Pages
         uses: actions/configure-pages@v2
