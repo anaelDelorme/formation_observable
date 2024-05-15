@@ -1,0 +1,109 @@
+---
+title: "Mise à jour du site"
+toc-depth: 4
+---
+
+## Ajouter une page
+
+Nous allons ajouter une page sur l'historique météorologique en Occitanie. Pour cela nous créons un fichier **meteo_occitanie.md** dans le répertoire `src`.
+
+Vous pouvez mettre le code suivant : 
+
+````
+# Météo en Occitanie
+
+```{js}
+display(1 + 2);
+
+``` 
+````
+
+Ce qui affichera : 
+
+![](create_page.png)
+
+:::callout-note
+Si votre codespaces n'est plus actif, veuillez le relancer. Et pour relancer le site en dev, tapez dans la console : `npm run dev` dans le répertoire `hello-framework`
+:::
+
+Vous avez pu le constater, la création de pages est très facile ! Et vous avez également constater que le fichier créé était en `.md`. C'est un markdown, que l'on connait déjà dans Rmarkdown ou dans Quarto.
+
+Pour en savoir plus sur le markdown en Observable : [Markdown en observable](aller_plus_loin.qmd) 
+
+## Chargement de données
+
+## Affichage d'un tableau
+
+## Création d'un graphique
+
+## Affichage d'une carte (map)
+
+## Zones de sélection / formulaires
+
+## Mise en forme
+
+
+### Carte (card)
+
+Observable utilise des cartes pour grouper et délimiter du contenu. Pour créer une carte, il suffit d'utiliser la balise div avec la class *card* :
+
+````
+<div class="card">
+````
+
+### Grille
+
+Une grille va contenir des cartes. Il est possible d'indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes : 
+
+````
+<div class="grid grid-cols-4">
+  <div class="card"><h1>A</h1></div>
+  <div class="card"><h1>B</h1></div>
+  <div class="card"><h1>C</h1></div>
+  <div class="card"><h1>D</h1></div>
+</div>
+````
+
+Les possibilités sont *grid-cols-2*, *grid-cols-3*, ou *grid-cols-4*.       
+Voir les différentes possibilités de grille : <https://observablehq.com/framework/markdown#grids>
+
+::::callout-note
+Retravailler votre page de météo pour mettre les items dans des cartes et définissez une grille d'affichage.
+::::
+
+### Thème
+
+Il est possible d'appliquer des thèmes. Pour cela il faut mettre à jour l'entête du fichier `.md` en ajoutant : `theme: "glacier"` ou `theme: [cotton, slate]`
+
+Voir le détail des thèmes ici : <https://observablehq.com/framework/themes>. 
+
+### Texte en couleur
+
+Vous pouvez écrire du texte en couleur, via une balise Html :     
+
+-  `<div class="red">Ce texte est en rouge.</div>`
+-  `<div class="yellow">Ce texte est en jaune.</div>`
+-  `<div class="green">Ce texte est en vert.</div>`
+-  `<div class="blue">Ce texte est en bleu.</div>`
+-  `<div class="muted">Ce texte est en gris clair.</div>`
+
+
+### Création de blocs mis en valeur : 
+ 
+On peut ajouter des blocs de *note*, *tip*, *warning* et *caution* : 
+
+````
+<div class="note" label="Note">C'est une note.</div>
+<div class="tip" label="Astuce">C'est une astuce.</div>
+<div class="warning" label="⚠️ Danger ⚠️">C'est une attention.</div>
+<div class="caution" label>C'est une mise en garde.</div>
+
+````
+
+
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="deploiement_projet.qmd">Suivant</a>
+
+</button>

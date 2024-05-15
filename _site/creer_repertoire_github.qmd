@@ -1,0 +1,19 @@
+---
+title: "Création d'un répertoire pour stocker votre code Observable"
+---
+
+Nous allons créer un répertoire Github pour y stocker le code source de notre site Observable et toutes ses versions.   
+
+Je vous propose de tout faire en ligne en suivant les étapes suivantes :        
+
+-   Aller sur <https://github.com/> et se connecter,    
+-   Créer un nouveau repository en cliquant sur *New* :   
+![](img/create_repo.png)    
+-   Choisir le **Repository Name**, une description et c'est tout !
+![](img/create_repo2.png)     
+-   Puis cliquer sur README pour créer un premier fichier **README** et finaliser la création du repo :    
+![](img/create_repo3.png)         
+-   Compléter le readme et cliquer sur **Commit changes...**    
+![](img/create_repo4.png)         
+
+

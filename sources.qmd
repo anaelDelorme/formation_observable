@@ -1,0 +1,23 @@
+---
+title: "Liste des sources utiles"
+---
+
+## Git et Github
+  
+-   <https://docs.github.com/fr>
+-   <https://www.jesuisundev.com/comprendre-git-en-7-minutes/>
+-   <https://kinsta.com/fr/base-de-connaissances/git-vs-github/>
+-   Codespaces : <https://docs.github.com/fr/codespaces>
+
+## Observable
+
+-   Framework (projects): <https://observablehq.com/framework/>
+-   Framework sur Github: <https://github.com/observablehq/framework>
+-   Exemples: <https://observablehq.com/explore>
+-   Plot : <https://observablehq.com/plot/>
+-   Notebook : <https://observablehq.com/documentation/notebooks/>
+
+## Markdown   
+
+-   <https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>
+-   Extension de markdown en Observable : <https://observablehq.com/framework/markdown#basic-syntax>

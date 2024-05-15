@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formation Observable - Création d’un compte Github</title>
+<title>Formation Observable - Mise à jour du site</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Création d’un compte Github</h1>
+      <h1 class="quarto-secondary-nav-title">Mise à jour du site</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -148,7 +148,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link active">Compte Github</a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link">Compte Github</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -173,8 +173,25 @@ ul.task-list{list-style: none;}
   </div>
 </li>
           <li class="sidebar-item">
-  creer_premier_projet.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_projet.html" class="sidebar-item-text sidebar-link">Initialisation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./maj_projet.html" class="sidebar-item-text sidebar-link active">Mise à jour</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deploiement_projet.html" class="sidebar-item-text sidebar-link">Déploiement</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aller_plus_loin.html" class="sidebar-item-text sidebar-link">Aller plus loin</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -187,11 +204,15 @@ ul.task-list{list-style: none;}
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  presentation_notebook.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./presentation_notebook.html" class="sidebar-item-text sidebar-link">Présentation d’Observable Notebook</a>
+  </div>
+</li>
           <li class="sidebar-item">
-  creer_premier_notebook.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_notebook.html" class="sidebar-item-text sidebar-link">Création d’un premier notebook</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -204,11 +225,15 @@ ul.task-list{list-style: none;}
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  presentation_quarto_observable.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./presentation_quarto_observable.html" class="sidebar-item-text sidebar-link">Présentation d’Observable dans quarto</a>
+  </div>
+</li>
           <li class="sidebar-item">
-  creer_premier_quarto_observable.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_quarto_observable.html" class="sidebar-item-text sidebar-link">Création d’un premier quarto avec des cellules observable</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -220,17 +245,29 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-et-github-cest-quoi" id="toc-git-et-github-cest-quoi" class="nav-link active" data-scroll-target="#git-et-github-cest-quoi">Git et Github, c’est quoi ?</a></li>
-  <li><a href="#création-dun-compte" id="toc-création-dun-compte" class="nav-link" data-scroll-target="#création-dun-compte">Création d’un compte</a></li>
+  <li><a href="#ajouter-une-page" id="toc-ajouter-une-page" class="nav-link active" data-scroll-target="#ajouter-une-page">Ajouter une page</a></li>
+  <li><a href="#chargement-de-données" id="toc-chargement-de-données" class="nav-link" data-scroll-target="#chargement-de-données">Chargement de données</a></li>
+  <li><a href="#affichage-dun-tableau" id="toc-affichage-dun-tableau" class="nav-link" data-scroll-target="#affichage-dun-tableau">Affichage d’un tableau</a></li>
+  <li><a href="#création-dun-graphique" id="toc-création-dun-graphique" class="nav-link" data-scroll-target="#création-dun-graphique">Création d’un graphique</a></li>
+  <li><a href="#affichage-dune-carte-map" id="toc-affichage-dune-carte-map" class="nav-link" data-scroll-target="#affichage-dune-carte-map">Affichage d’une carte (map)</a></li>
+  <li><a href="#zones-de-sélection-formulaires" id="toc-zones-de-sélection-formulaires" class="nav-link" data-scroll-target="#zones-de-sélection-formulaires">Zones de sélection / formulaires</a></li>
+  <li><a href="#mise-en-forme" id="toc-mise-en-forme" class="nav-link" data-scroll-target="#mise-en-forme">Mise en forme</a>
+  <ul class="collapse">
+  <li><a href="#carte-card" id="toc-carte-card" class="nav-link" data-scroll-target="#carte-card">Carte (card)</a></li>
+  <li><a href="#grille" id="toc-grille" class="nav-link" data-scroll-target="#grille">Grille</a></li>
+  <li><a href="#thème" id="toc-thème" class="nav-link" data-scroll-target="#thème">Thème</a></li>
+  <li><a href="#texte-en-couleur" id="toc-texte-en-couleur" class="nav-link" data-scroll-target="#texte-en-couleur">Texte en couleur</a></li>
+  <li><a href="#création-de-blocs-mis-en-valeur" id="toc-création-de-blocs-mis-en-valeur" class="nav-link" data-scroll-target="#création-de-blocs-mis-en-valeur">Création de blocs mis en valeur :</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/anaelDelorme/formation_observable/edit/main/github.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/anaelDelorme/formation_observable/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/anaelDelorme/formation_observable/edit/main/maj_projet.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/anaelDelorme/formation_observable/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Création d’un compte Github</h1>
+<h1 class="title d-none d-lg-block">Mise à jour du site</h1>
 </div>
 
 
@@ -244,23 +281,111 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="git-et-github-cest-quoi" class="level2">
-<h2 class="anchored" data-anchor-id="git-et-github-cest-quoi">Git et Github, c’est quoi ?</h2>
-<p>Git est un outil de gestion de versions qui permet aux développeurs de <strong>suivre les modifications</strong> apportées à un ensemble de fichiers au fil du temps. Cela signifie que si vous faites une erreur ou que vous avez besoin de revenir à une version antérieure, Git vous permet de le faire facilement.</p>
-<p>Voici une analogie pour le vulgariser :</p>
-<p><em>Imaginez que vous écrivez un livre avec plusieurs coauteurs. Chaque chapitre est un fichier, et chaque modification du texte est une nouvelle “version” du livre. Git serait comme un grand cahier de brouillon où chaque page représente une version différente de votre livre. Vous pouvez ajouter des pages (nouvelles versions), enlever des pages (annuler des changements), ou même fusionner des pages (combiner les changements de différents auteurs). Et le meilleur, c’est que chaque auteur a son propre cahier, donc ils peuvent travailler sur leurs chapitres indépendamment sans interférer avec le travail des autres.</em> <a href="https://www.jesuisundev.com/comprendre-git-en-7-minutes/" class="uri">https://www.jesuisundev.com/comprendre-git-en-7-minutes/</a></p>
-<p>GitHub, d’autre part, est un service en ligne qui utilise Git et le rend plus accessible et collaboratif. Si Git est le cahier de brouillon, alors GitHub serait comme une bibliothèque où tous ces cahiers sont stockés. Les auteurs peuvent y déposer leurs cahiers (<em>new repository</em>), les partager avec d’autres, et même emprunter les cahiers des autres pour voir ce qu’ils ont écrit et y ajouter leurs propres modifications. <a href="https://kinsta.com/fr/base-de-connaissances/git-vs-github/" class="uri">https://kinsta.com/fr/base-de-connaissances/git-vs-github/</a></p>
-<p>En résumé, Git aide à gérer les versions de vos projets, tandis que GitHub est une plateforme qui facilite la collaboration autour de ces projets gérés par Git.</p>
+<section id="ajouter-une-page" class="level2">
+<h2 class="anchored" data-anchor-id="ajouter-une-page">Ajouter une page</h2>
+<p>Nous allons ajouter une page sur l’historique météorologique en Occitanie. Pour cela nous créons un fichier <strong>meteo_occitanie.md</strong> dans le répertoire <code>src</code>.</p>
+<p>Vous pouvez mettre le code suivant :</p>
+<pre><code># Météo en Occitanie
+
+```{js}
+display(1 + 2);
+
+``` </code></pre>
+<p>Ce qui affichera :</p>
+<p><img src="create_page.png" class="img-fluid"></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si votre codespaces n’est plus actif, veuillez le relancer. Et pour relancer le site en dev, tapez dans la console : <code>npm run dev</code> dans le répertoire <code>hello-framework</code></p>
+</div>
+</div>
+<p>Vous avez pu le constater, la création de pages est très facile ! Et vous avez également constater que le fichier créé était en <code>.md</code>. C’est un markdown, que l’on connait déjà dans Rmarkdown ou dans Quarto.</p>
+<p>Pour en savoir plus sur le markdown en Observable : <a href="./aller_plus_loin.html">Markdown en observable</a></p>
 </section>
-<section id="création-dun-compte" class="level2">
-<h2 class="anchored" data-anchor-id="création-dun-compte">Création d’un compte</h2>
-<p>Je vous propose de suivre la documentation officielle de Github: <a href="https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github" class="uri">https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github</a></p>
-<p><img src="img/git.jpg" class="img-fluid"></p>
+<section id="chargement-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="chargement-de-données">Chargement de données</h2>
+</section>
+<section id="affichage-dun-tableau" class="level2">
+<h2 class="anchored" data-anchor-id="affichage-dun-tableau">Affichage d’un tableau</h2>
+</section>
+<section id="création-dun-graphique" class="level2">
+<h2 class="anchored" data-anchor-id="création-dun-graphique">Création d’un graphique</h2>
+</section>
+<section id="affichage-dune-carte-map" class="level2">
+<h2 class="anchored" data-anchor-id="affichage-dune-carte-map">Affichage d’une carte (map)</h2>
+</section>
+<section id="zones-de-sélection-formulaires" class="level2">
+<h2 class="anchored" data-anchor-id="zones-de-sélection-formulaires">Zones de sélection / formulaires</h2>
+</section>
+<section id="mise-en-forme" class="level2">
+<h2 class="anchored" data-anchor-id="mise-en-forme">Mise en forme</h2>
+<section id="carte-card" class="level3">
+<h3 class="anchored" data-anchor-id="carte-card">Carte (card)</h3>
+<p>Observable utilise des cartes pour grouper et délimiter du contenu. Pour créer une carte, il suffit d’utiliser la balise div avec la class <em>card</em> :</p>
+<pre><code>&lt;div class="card"&gt;</code></pre>
+</section>
+<section id="grille" class="level3">
+<h3 class="anchored" data-anchor-id="grille">Grille</h3>
+<p>Une grille va contenir des cartes. Il est possible d’indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes :</p>
+<pre><code>&lt;div class="grid grid-cols-4"&gt;
+  &lt;div class="card"&gt;&lt;h1&gt;A&lt;/h1&gt;&lt;/div&gt;
+  &lt;div class="card"&gt;&lt;h1&gt;B&lt;/h1&gt;&lt;/div&gt;
+  &lt;div class="card"&gt;&lt;h1&gt;C&lt;/h1&gt;&lt;/div&gt;
+  &lt;div class="card"&gt;&lt;h1&gt;D&lt;/h1&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>Les possibilités sont <em>grid-cols-2</em>, <em>grid-cols-3</em>, ou <em>grid-cols-4</em>.<br>
+Voir les différentes possibilités de grille : <a href="https://observablehq.com/framework/markdown#grids" class="uri">https://observablehq.com/framework/markdown#grids</a></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Retravailler votre page de météo pour mettre les items dans des cartes et définissez une grille d’affichage.</p>
+</div>
+</div>
+</section>
+<section id="thème" class="level3">
+<h3 class="anchored" data-anchor-id="thème">Thème</h3>
+<p>Il est possible d’appliquer des thèmes. Pour cela il faut mettre à jour l’entête du fichier <code>.md</code> en ajoutant : <code>theme: "glacier"</code> ou <code>theme: [cotton, slate]</code></p>
+<p>Voir le détail des thèmes ici : <a href="https://observablehq.com/framework/themes" class="uri">https://observablehq.com/framework/themes</a>.</p>
+</section>
+<section id="texte-en-couleur" class="level3">
+<h3 class="anchored" data-anchor-id="texte-en-couleur">Texte en couleur</h3>
+<p>Vous pouvez écrire du texte en couleur, via une balise Html :</p>
+<ul>
+<li><code>&lt;div class="red"&gt;Ce texte est en rouge.&lt;/div&gt;</code></li>
+<li><code>&lt;div class="yellow"&gt;Ce texte est en jaune.&lt;/div&gt;</code></li>
+<li><code>&lt;div class="green"&gt;Ce texte est en vert.&lt;/div&gt;</code></li>
+<li><code>&lt;div class="blue"&gt;Ce texte est en bleu.&lt;/div&gt;</code></li>
+<li><code>&lt;div class="muted"&gt;Ce texte est en gris clair.&lt;/div&gt;</code></li>
+</ul>
+</section>
+<section id="création-de-blocs-mis-en-valeur" class="level3">
+<h3 class="anchored" data-anchor-id="création-de-blocs-mis-en-valeur">Création de blocs mis en valeur :</h3>
+<p>On peut ajouter des blocs de <em>note</em>, <em>tip</em>, <em>warning</em> et <em>caution</em> :</p>
+<pre><code>&lt;div class="note" label="Note"&gt;C'est une note.&lt;/div&gt;
+&lt;div class="tip" label="Astuce"&gt;C'est une astuce.&lt;/div&gt;
+&lt;div class="warning" label="⚠️ Danger ⚠️"&gt;C'est une attention.&lt;/div&gt;
+&lt;div class="caution" label&gt;C'est une mise en garde.&lt;/div&gt;
+</code></pre>
 <button type="button" class="btn btn-primary btn-lg">
-<a href="./creer_repertoire_github.html">Suivant</a>
+<p><a href="./deploiement_projet.html">Suivant</a></p>
 </button>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

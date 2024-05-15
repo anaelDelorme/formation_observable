@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Formation Observable - Création d’un compte Github</title>
+<title>Formation Observable - Présentation d’Observable Framework</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Création d’un compte Github</h1>
+      <h1 class="quarto-secondary-nav-title">Présentation d’Observable Framework</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -148,7 +148,7 @@ ul.task-list{list-style: none;}
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./github.html" class="sidebar-item-text sidebar-link active">Compte Github</a>
+  <a href="./github.html" class="sidebar-item-text sidebar-link">Compte Github</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -169,12 +169,29 @@ ul.task-list{list-style: none;}
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentation_framework.html" class="sidebar-item-text sidebar-link">Présentation</a>
+  <a href="./presentation_framework.html" class="sidebar-item-text sidebar-link active">Présentation</a>
   </div>
 </li>
           <li class="sidebar-item">
-  creer_premier_projet.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_projet.html" class="sidebar-item-text sidebar-link">Initialisation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./maj_projet.html" class="sidebar-item-text sidebar-link">Mise à jour</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deploiement_projet.html" class="sidebar-item-text sidebar-link">Déploiement</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./aller_plus_loin.html" class="sidebar-item-text sidebar-link">Aller plus loin</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -187,11 +204,15 @@ ul.task-list{list-style: none;}
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  presentation_notebook.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./presentation_notebook.html" class="sidebar-item-text sidebar-link">Présentation d’Observable Notebook</a>
+  </div>
+</li>
           <li class="sidebar-item">
-  creer_premier_notebook.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_notebook.html" class="sidebar-item-text sidebar-link">Création d’un premier notebook</a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -204,11 +225,15 @@ ul.task-list{list-style: none;}
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  presentation_quarto_observable.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./presentation_quarto_observable.html" class="sidebar-item-text sidebar-link">Présentation d’Observable dans quarto</a>
+  </div>
+</li>
           <li class="sidebar-item">
-  creer_premier_quarto_observable.qmd
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="./creer_premier_quarto_observable.html" class="sidebar-item-text sidebar-link">Création d’un premier quarto avec des cellules observable</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -220,17 +245,20 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#git-et-github-cest-quoi" id="toc-git-et-github-cest-quoi" class="nav-link active" data-scroll-target="#git-et-github-cest-quoi">Git et Github, c’est quoi ?</a></li>
-  <li><a href="#création-dun-compte" id="toc-création-dun-compte" class="nav-link" data-scroll-target="#création-dun-compte">Création d’un compte</a></li>
+  <li><a href="#quest-ce-que-observablehq-framework" id="toc-quest-ce-que-observablehq-framework" class="nav-link active" data-scroll-target="#quest-ce-que-observablehq-framework">Qu’est-ce que ObservableHQ Framework ?</a></li>
+  <li><a href="#caractéristiques-principales" id="toc-caractéristiques-principales" class="nav-link" data-scroll-target="#caractéristiques-principales">Caractéristiques Principales</a></li>
+  <li><a href="#structure-dun-projet" id="toc-structure-dun-projet" class="nav-link" data-scroll-target="#structure-dun-projet">Structure d’un Projet</a></li>
+  <li><a href="#pourquoi-choisir-observablehq-framework" id="toc-pourquoi-choisir-observablehq-framework" class="nav-link" data-scroll-target="#pourquoi-choisir-observablehq-framework">Pourquoi Choisir ObservableHQ Framework ?</a></li>
+  <li><a href="#exemples" id="toc-exemples" class="nav-link" data-scroll-target="#exemples">Exemples :</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/anaelDelorme/formation_observable/edit/main/github.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/anaelDelorme/formation_observable/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/anaelDelorme/formation_observable/edit/main/presentation_framework.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/anaelDelorme/formation_observable/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Création d’un compte Github</h1>
+<h1 class="title d-none d-lg-block">Présentation d’Observable Framework</h1>
 </div>
 
 
@@ -244,20 +272,56 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="git-et-github-cest-quoi" class="level2">
-<h2 class="anchored" data-anchor-id="git-et-github-cest-quoi">Git et Github, c’est quoi ?</h2>
-<p>Git est un outil de gestion de versions qui permet aux développeurs de <strong>suivre les modifications</strong> apportées à un ensemble de fichiers au fil du temps. Cela signifie que si vous faites une erreur ou que vous avez besoin de revenir à une version antérieure, Git vous permet de le faire facilement.</p>
-<p>Voici une analogie pour le vulgariser :</p>
-<p><em>Imaginez que vous écrivez un livre avec plusieurs coauteurs. Chaque chapitre est un fichier, et chaque modification du texte est une nouvelle “version” du livre. Git serait comme un grand cahier de brouillon où chaque page représente une version différente de votre livre. Vous pouvez ajouter des pages (nouvelles versions), enlever des pages (annuler des changements), ou même fusionner des pages (combiner les changements de différents auteurs). Et le meilleur, c’est que chaque auteur a son propre cahier, donc ils peuvent travailler sur leurs chapitres indépendamment sans interférer avec le travail des autres.</em> <a href="https://www.jesuisundev.com/comprendre-git-en-7-minutes/" class="uri">https://www.jesuisundev.com/comprendre-git-en-7-minutes/</a></p>
-<p>GitHub, d’autre part, est un service en ligne qui utilise Git et le rend plus accessible et collaboratif. Si Git est le cahier de brouillon, alors GitHub serait comme une bibliothèque où tous ces cahiers sont stockés. Les auteurs peuvent y déposer leurs cahiers (<em>new repository</em>), les partager avec d’autres, et même emprunter les cahiers des autres pour voir ce qu’ils ont écrit et y ajouter leurs propres modifications. <a href="https://kinsta.com/fr/base-de-connaissances/git-vs-github/" class="uri">https://kinsta.com/fr/base-de-connaissances/git-vs-github/</a></p>
-<p>En résumé, Git aide à gérer les versions de vos projets, tandis que GitHub est une plateforme qui facilite la collaboration autour de ces projets gérés par Git.</p>
+<section id="quest-ce-que-observablehq-framework" class="level2">
+<h2 class="anchored" data-anchor-id="quest-ce-que-observablehq-framework">Qu’est-ce que ObservableHQ Framework ?</h2>
+<p>ObservableHQ Framework est un générateur de sites statiques open-source conçu pour les applications de données, les tableaux de bord, les rapports et plus encore. Il combine une interface en ligne de commande pour automatiser les constructions et déploiements avec un serveur de prévisualisation pour le développement local.</p>
 </section>
-<section id="création-dun-compte" class="level2">
-<h2 class="anchored" data-anchor-id="création-dun-compte">Création d’un compte</h2>
-<p>Je vous propose de suivre la documentation officielle de Github: <a href="https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github" class="uri">https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github</a></p>
-<p><img src="img/git.jpg" class="img-fluid"></p>
+<section id="caractéristiques-principales" class="level2">
+<h2 class="anchored" data-anchor-id="caractéristiques-principales">Caractéristiques Principales</h2>
+<ul>
+<li><strong>Développement Local</strong>: Serveur de prévisualisation pour des mises à jour instantanées lors du développement.<br>
+</li>
+<li><strong>Génération de Site Statique</strong>: Compilations de Markdown, JavaScript et autres ressources en un site statique.<br>
+</li>
+<li><strong>Command-Line Interface (CLI)</strong>: Pour automatiser les constructions et déploiements.<br>
+</li>
+<li><strong>Support Multilingue</strong>: Inclut des chargeurs de données pour SQL, Python, R, et plus.<br>
+</li>
+<li><strong>Thèmes et Bibliothèques</strong>: Thèmes conçus avec soin, grilles et bibliothèques pour des affichages de données qui s’adaptent à tous les appareils.</li>
+</ul>
+</section>
+<section id="structure-dun-projet" class="level2">
+<h2 class="anchored" data-anchor-id="structure-dun-projet">Structure d’un Projet</h2>
+<p>Un projet ObservableHQ typique comprendra :</p>
+<ul>
+<li><strong>Markdown</strong>: Pour écrire du contenu et des instructions.<br>
+</li>
+<li><strong>JavaScript</strong>: Pour ajouter de l’interactivité et de la réactivité.<br>
+</li>
+<li><strong>Data Loaders</strong>: Pour intégrer des données dynamiques dans votre application.</li>
+</ul>
+<p><img src="img/explore-projects-illo.svg" class="img-fluid"></p>
+</section>
+<section id="pourquoi-choisir-observablehq-framework" class="level2">
+<h2 class="anchored" data-anchor-id="pourquoi-choisir-observablehq-framework">Pourquoi Choisir ObservableHQ Framework ?</h2>
+<p>ObservableHQ Framework est idéal pour les statisticiens et les analystes de données qui souhaitent créer des applications de données interactives et des tableaux de bord. Avec sa capacité à intégrer des analyses de données complexes et des visualisations interactives, c’est un outil puissant pour partager des insights et des rapports détaillés.</p>
+</section>
+<section id="exemples" class="level2">
+<h2 class="anchored" data-anchor-id="exemples">Exemples :</h2>
+<ul>
+<li><a href="https://jaanli.github.io/american-community-survey/income" class="uri">https://jaanli.github.io/american-community-survey/income</a></li>
+<li><a href="https://waveform-analytics.github.io/wa_density_demo/" class="uri">https://waveform-analytics.github.io/wa_density_demo/</a><br>
+</li>
+<li><a href="https://m-clare.observablehq.cloud/boston-building-retrofits/" class="uri">https://m-clare.observablehq.cloud/boston-building-retrofits/</a></li>
+<li><a href="https://boston-311-dash.netlify.app/" class="uri">https://boston-311-dash.netlify.app/</a></li>
+<li><a href="https://observablehq.com/framework/examples/eia/" class="uri">https://observablehq.com/framework/examples/eia/</a><br>
+</li>
+<li><a href="https://observablehq.com/framework/examples/plot/" class="uri">https://observablehq.com/framework/examples/plot/</a><br>
+</li>
+<li><a href="https://observablehq.com/framework/examples/penguin-classification/" class="uri">https://observablehq.com/framework/examples/penguin-classification/</a></li>
+</ul>
 <button type="button" class="btn btn-primary btn-lg">
-<a href="./creer_repertoire_github.html">Suivant</a>
+<a href="./creer_premier_projet.html">Suivant</a>
 </button>
 
 

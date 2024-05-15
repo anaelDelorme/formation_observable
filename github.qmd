@@ -2,8 +2,24 @@
 title: "Création d'un compte Github"
 ---
 
+## Git et Github, c'est quoi ?
 
-## Github, c'est quoi ?
+Git est un outil de gestion de versions qui permet aux développeurs de **suivre les modifications** apportées à un ensemble de fichiers au fil du temps. Cela signifie que si vous faites une erreur ou que vous avez besoin de revenir à une version antérieure, Git vous permet de le faire facilement.
 
+Voici une analogie pour le vulgariser :
+
+*Imaginez que vous écrivez un livre avec plusieurs coauteurs. Chaque chapitre est un fichier, et chaque modification du texte est une nouvelle "version" du livre. Git serait comme un grand cahier de brouillon où chaque page représente une version différente de votre livre. Vous pouvez ajouter des pages (nouvelles versions), enlever des pages (annuler des changements), ou même fusionner des pages (combiner les changements de différents auteurs). Et le meilleur, c'est que chaque auteur a son propre cahier, donc ils peuvent travailler sur leurs chapitres indépendamment sans interférer avec le travail des autres.* <https://www.jesuisundev.com/comprendre-git-en-7-minutes/>
+
+GitHub, d'autre part, est un service en ligne qui utilise Git et le rend plus accessible et collaboratif. Si Git est le cahier de brouillon, alors GitHub serait comme une bibliothèque où tous ces cahiers sont stockés. Les auteurs peuvent y déposer leurs cahiers (*new repository*), les partager avec d'autres, et même emprunter les cahiers des autres pour voir ce qu'ils ont écrit et y ajouter leurs propres modifications. <https://kinsta.com/fr/base-de-connaissances/git-vs-github/>
+
+En résumé, Git aide à gérer les versions de vos projets, tandis que GitHub est une plateforme qui facilite la collaboration autour de ces projets gérés par Git.
 
 ## Création d'un compte
+
+Je vous propose de suivre la documentation officielle de Github: <https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github>
+
+![](img/git.jpg)
+
+<button type="button" class="btn btn-primary btn-lg">
+  <a href="creer_repertoire_github.qmd">Suivant</a>
+</button>

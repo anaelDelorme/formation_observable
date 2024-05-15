@@ -1,0 +1,100 @@
+---
+title: "Pour aller plus loin en observable framework"
+toc-depth: 4
+---
+
+## Bases de markdown
+
+Vous pouvez créer un fichier `example-markdown.md` et copier les codes suivants pour voir le résultat dans la page web.     
+
+### Titres
+
+````
+# Titre de niveau 1
+
+## Titre de niveau 2
+
+### Titre de niveau 3
+````
+
+### Styles
+
+````
+Pour le gras: **Truc en gras**     
+
+Pour l'italique: *Truc en italique*     
+
+Pour une citation :    
+> Ceci est une citation
+````
+
+### Tableaux
+
+````
+Column 1   | Column 2     | Column 3
+---------- | ------------ | ----------
+Cell 1-1   | Cell 2-1     | Cell 3-1
+Cell 1-2   | Cell 2-2     | Cell 3-2
+````
+
+
+### Listes
+
+````
+- red
+- green
+- blue
+  - light blue
+  - dark blue
+
+1. first
+1. second
+1. third
+   1. third first
+   1. third second
+````
+
+### Liens
+````
+<https://google.com>      
+[relative link](./example-dashboard)      
+[external link](https://lequipe.fr)      
+````
+
+### Images
+````
+![A horse](./horse.jpg)
+![A happy kitten](https://placekitten.com/200/300)
+````
+
+###  Entête
+Dans le fichier `.md` vous pouvez tenter de mettre une section yaml qui ressemble à cela : 
+
+````
+---
+title: Météo Occitanie
+toc: false
+---
+````
+
+Vous vous apercevez que le titre de la page indiquée dans le navigateur est mise à jour. Le paramètre `toc: false` indique qu'il n'y aura pas de sommaire (Table of contents) pour cette page. 
+
+### HTML
+
+Il est possible de mettre du Html directement dans le markdown. Essayez par exemple ce code :
+
+````
+<details>
+  <summary>Clic ici </summary>
+    Ce texte n'est pas visible par défaut ! 
+</details>
+````
+
+
+
+En savoir plus sur le markdown : <https://observablehq.com/framework/markdown>
+
+## Création de composant
+
+
+## Chargement de données

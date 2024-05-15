@@ -33,13 +33,25 @@ website:
       contents:
         - section: "Pré-requis"
           contents:
-            - compte_observable.qmd
-            - github.qmd
+            - href: compte_observable.qmd
+              text: "Compte observable"
+            - href: github.qmd
+              text: "Compte Github"
+            - href: creer_repertoire_github.qmd
+              text: "Dépôt github"
         - text: "---"
         - section: "Observable Framework"
           contents:
-            - presentation_framework.qmd
-            - creer_premier_projet.qmd
+            - href: presentation_framework.qmd
+              text: Présentation
+            - href: creer_premier_projet.qmd
+              text: Initialisation
+            - href: maj_projet.qmd
+              text: Mise à jour
+            - href: deploiement_projet.qmd
+              text: Déploiement
+            - href: aller_plus_loin.qmd
+              text: Aller plus loin 
         - text: "---"
         - section: "Observable Notebook"
           contents:

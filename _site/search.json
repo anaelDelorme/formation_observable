@@ -25,13 +25,209 @@
     "href": "github.html",
     "title": "Création d’un compte Github",
     "section": "",
-    "text": "Création d’un compte"
+    "text": "Git est un outil de gestion de versions qui permet aux développeurs de suivre les modifications apportées à un ensemble de fichiers au fil du temps. Cela signifie que si vous faites une erreur ou que vous avez besoin de revenir à une version antérieure, Git vous permet de le faire facilement.\nVoici une analogie pour le vulgariser :\nImaginez que vous écrivez un livre avec plusieurs coauteurs. Chaque chapitre est un fichier, et chaque modification du texte est une nouvelle “version” du livre. Git serait comme un grand cahier de brouillon où chaque page représente une version différente de votre livre. Vous pouvez ajouter des pages (nouvelles versions), enlever des pages (annuler des changements), ou même fusionner des pages (combiner les changements de différents auteurs). Et le meilleur, c’est que chaque auteur a son propre cahier, donc ils peuvent travailler sur leurs chapitres indépendamment sans interférer avec le travail des autres. https://www.jesuisundev.com/comprendre-git-en-7-minutes/\nGitHub, d’autre part, est un service en ligne qui utilise Git et le rend plus accessible et collaboratif. Si Git est le cahier de brouillon, alors GitHub serait comme une bibliothèque où tous ces cahiers sont stockés. Les auteurs peuvent y déposer leurs cahiers (new repository), les partager avec d’autres, et même emprunter les cahiers des autres pour voir ce qu’ils ont écrit et y ajouter leurs propres modifications. https://kinsta.com/fr/base-de-connaissances/git-vs-github/\nEn résumé, Git aide à gérer les versions de vos projets, tandis que GitHub est une plateforme qui facilite la collaboration autour de ces projets gérés par Git."
   },
   {
     "objectID": "github.html#création-dun-compte",
     "href": "github.html#création-dun-compte",
     "title": "Création d’un compte Github",
     "section": "Création d’un compte",
-    "text": "Création d’un compte"
+    "text": "Création d’un compte\nJe vous propose de suivre la documentation officielle de Github: https://docs.github.com/fr/get-started/start-your-journey/creating-an-account-on-github\n\n\nSuivant"
+  },
+  {
+    "objectID": "creer_repertoire_github.html",
+    "href": "creer_repertoire_github.html",
+    "title": "Création d’un répertoire pour stocker votre code Observable",
+    "section": "",
+    "text": "Je vous propose de tout faire en ligne en suivant les étapes suivantes :\n\nAller sur https://github.com/ et se connecter,\nCréer un nouveau repository en cliquant sur New :\n\nChoisir le Repository Name, une description et c’est tout ! \nPuis cliquer sur README pour créer un premier fichier README et finaliser la création du repo :\n\nCompléter le readme et cliquer sur Commit changes…\n\n\n\nSuivant"
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Liste des sources utiles",
+    "section": "",
+    "text": "https://docs.github.com/fr\nhttps://www.jesuisundev.com/comprendre-git-en-7-minutes/\nhttps://kinsta.com/fr/base-de-connaissances/git-vs-github/\nCodespaces : https://docs.github.com/fr/codespaces"
+  },
+  {
+    "objectID": "presentation_framework.html",
+    "href": "presentation_framework.html",
+    "title": "Présentation d’Observable Framework",
+    "section": "",
+    "text": "ObservableHQ Framework est un générateur de sites statiques open-source conçu pour les applications de données, les tableaux de bord, les rapports et plus encore. Il combine une interface en ligne de commande pour automatiser les constructions et déploiements avec un serveur de prévisualisation pour le développement local."
+  },
+  {
+    "objectID": "presentation_framework.html#caractéristiques-principales",
+    "href": "presentation_framework.html#caractéristiques-principales",
+    "title": "Présentation d’Observable Framework",
+    "section": "Caractéristiques Principales",
+    "text": "Caractéristiques Principales\n\nDéveloppement Local: Serveur de prévisualisation pour des mises à jour instantanées lors du développement.\n\nGénération de Site Statique: Compilations de Markdown, JavaScript et autres ressources en un site statique.\n\nCommand-Line Interface (CLI): Pour automatiser les constructions et déploiements.\n\nSupport Multilingue: Inclut des chargeurs de données pour SQL, Python, R, et plus.\n\nThèmes et Bibliothèques: Thèmes conçus avec soin, grilles et bibliothèques pour des affichages de données qui s’adaptent à tous les appareils."
+  },
+  {
+    "objectID": "presentation_framework.html#structure-dun-projet",
+    "href": "presentation_framework.html#structure-dun-projet",
+    "title": "Présentation d’Observable Framework",
+    "section": "Structure d’un Projet",
+    "text": "Structure d’un Projet\nUn projet ObservableHQ typique comprendra :\n\nMarkdown: Pour écrire du contenu et des instructions.\n\nJavaScript: Pour ajouter de l’interactivité et de la réactivité.\n\nData Loaders: Pour intégrer des données dynamiques dans votre application."
+  },
+  {
+    "objectID": "presentation_framework.html#pourquoi-choisir-observablehq-framework",
+    "href": "presentation_framework.html#pourquoi-choisir-observablehq-framework",
+    "title": "Présentation d’Observable Framework",
+    "section": "Pourquoi Choisir ObservableHQ Framework ?",
+    "text": "Pourquoi Choisir ObservableHQ Framework ?\nObservableHQ Framework est idéal pour les statisticiens et les analystes de données qui souhaitent créer des applications de données interactives et des tableaux de bord. Avec sa capacité à intégrer des analyses de données complexes et des visualisations interactives, c’est un outil puissant pour partager des insights et des rapports détaillés."
+  },
+  {
+    "objectID": "presentation_framework.html#exemples",
+    "href": "presentation_framework.html#exemples",
+    "title": "Présentation d’Observable Framework",
+    "section": "Exemples :",
+    "text": "Exemples :\n\nhttps://jaanli.github.io/american-community-survey/income\nhttps://waveform-analytics.github.io/wa_density_demo/\n\nhttps://m-clare.observablehq.cloud/boston-building-retrofits/\nhttps://boston-311-dash.netlify.app/\nhttps://observablehq.com/framework/examples/eia/\n\nhttps://observablehq.com/framework/examples/plot/\n\nhttps://observablehq.com/framework/examples/penguin-classification/\n\n\nSuivant"
+  },
+  {
+    "objectID": "sources.html#observable",
+    "href": "sources.html#observable",
+    "title": "Liste des sources utiles",
+    "section": "Observable",
+    "text": "Observable\n\nFramework (projects): https://observablehq.com/framework/\nFramework sur Github: https://github.com/observablehq/framework\nExemples: https://observablehq.com/explore\nPlot : https://observablehq.com/plot/\nNotebook : https://observablehq.com/documentation/notebooks/"
+  },
+  {
+    "objectID": "creer_premier_projet.html",
+    "href": "creer_premier_projet.html",
+    "title": "Création d’un premier site",
+    "section": "",
+    "text": "Pour travailler en R, il est courant de travailler dans Rstudio. Pour le développement web, il est fortement recommandé de travailler avec VS Code. C’est un environnement de travail qui a des fonctionnalités équivalentes à RStudio mais qui est multi-langage. En ajoutant des extensions, on peut faire du R, du python, du javascript, du markdown, du CSS, etc…\nIl est possible (et recommandé) d’installer un VSCode en local sur son poste de travail. Pour la formation, et éviter des dificultés liées au proxy et aux droits d’admin, nous vous proposons d’utiliser un service proposé par Github qui s’appelle Codespaces. Codespaces vous offre un environnement de développement virtualisé, ce qui signifie qu’il n’est pas sur votre poste de travail mais sur un serveur de Github.\n\n\nGitHub Codespaces est un environnement de développement cloud proposé par GitHub. Il vous permet de créer rapidement des espaces de code pré-configurés, appelés codespaces, directement à partir de n’importe quel dépôt GitHub.\nAvec un compte gratuit, vous pouvez bénéficier des fonctionnalités suivantes de Codespaces :\n\nCréer des codespaces : Vous pouvez créer un codespace pour n’importe quel dépôt public ou privé appartenant à votre compte GitHub. Les dépôts privés comptent dans votre quota de stockage privé.\n\nEnvironnement Linux préconfigurés : Vos codespaces disposent d’un environnement Linux complet pré-configuré avec un grand nombre d’outils de développement, runtimes, éditeurs de code (VS Code), etc.\n\nConfiguration personnalisée : Vous pouvez personnaliser la configuration de vos codespaces en définissant des extensions VS Code, dépendances et tâches de construction.\n\nAccès sécurisé : Vos codespaces sont accessibles via un tunnel HTTPS sécurisé et vous pouvez collaborer avec d’autres utilisateurs au sein d’un codespace.\n\n\n\n\n\n\n\nWarning\n\n\n\nAttention : avec un compte gratuit, on ne peut utiliser Codespaces que 120 heures par mois et avec un stockage de 15 GB max par mois. Au delà il faudra installer VSCode sur votre poste de travail.\n\n\n\n\n\n\naller sur Github à la page de votre repository\nOuvrir le menu Code, aller dans l’onglet Codespaces et choisir Create codespace on main\n\n\n\nvous arrivez directement dans un VSCode avec :\n\nA gauche le menu\nPuis l’explorateur qui liste les fichiers de votre repository\n\nEn page principale est ouvert votre fichier Readme\nEn bas vous avez le terminal"
+  },
+  {
+    "objectID": "creer_premier_projet.html#créer-le-site-observable-dans-votre-repository",
+    "href": "creer_premier_projet.html#créer-le-site-observable-dans-votre-repository",
+    "title": "Création d’un premier site",
+    "section": "Créer le site Observable dans votre repository",
+    "text": "Créer le site Observable dans votre repository\n\nNPM et Node.js en quelques mots\nPour créer un site Observable et le compiler, on passera des commandes très simples avec NPM. Voici une présentation rapide :\nNode.js Node.js est un environnement d’exécution JavaScript côté serveur. Il permet d’exécuter du code JavaScript en dehors d’un navigateur web, directement sur votre ordinateur ou un serveur. Node.js est particulièrement utile pour créer des applications web, des APIs, des outils en ligne de commande ou encore des scripts automatisés.\nNPM (Node Package Manager) NPM est le gestionnaire de paquets officiel de Node.js. Il vous permet d’installer facilement des bibliothèques open-source écrites par la communauté Node.js. Ces bibliothèques, appelées “packages”, ajoutent des fonctionnalités supplémentaires à votre application. NPM vous évite d’avoir à tout réécrire de zéro.\nCommandes NPM courantes Voici quelques commandes npm que vous utiliserez fréquemment :\n\nnpm install : Cette commande installe toutes les dépendances (packages externes) requises par votre projet, listées dans le fichier package.json.\nnpm install <package-name> : Cette commande installe une librairie spécifique.\n\nnpm update: Cette commande met à jour toutes les librairies listées dans le fichier package.json.\nnpm update <package-name> : Cette commande met à jour une librairie spécifique.\n\nnpm uninstall <package-name>: Désinstalle un package de votre projet.\n\nnpm run script: Exécute un des scripts définis dans package.json, par exemple “npm run build”.\n\nnpm init: Crée un nouveau fichier package.json pour commencer un nouveau projet Node.\n\n\n\nCréation du site Observable avec les exemples\nDans le terminal, lancer la commande suivante :\n\nnpm init \"@observablehq\"\n\nPuis répondre aux questions :\n\n\n\n\n\n\nWarning\n\n\n\nAttention à ne pas initialiser de repo GIT car c’est déjà au niveau du projet !\n\n\n\nUne vidéo en anglais décrit bien le déroulé de cette étape :"
+  },
+  {
+    "objectID": "creer_premier_projet.html#lancement-du-site",
+    "href": "creer_premier_projet.html#lancement-du-site",
+    "title": "Création d’un premier site",
+    "section": "Lancement du site",
+    "text": "Lancement du site\nComme proposé dans le terminal, il faut aller dans le répertoire créé et lancer la commande qui permet de démarrer le site en développement.\n\ncd ./formation\nnpm run dev    \n\nUn onglet s’ouvre avec votre site Observable en développement, avec les exemples de dashboard et de report."
+  },
+  {
+    "objectID": "creer_premier_projet.html#vérification-de-la-mise-à-jour-automatique",
+    "href": "creer_premier_projet.html#vérification-de-la-mise-à-jour-automatique",
+    "title": "Création d’un premier site",
+    "section": "Vérification de la mise à jour automatique",
+    "text": "Vérification de la mise à jour automatique\n\nAller dans src et ouvrez index.md.\n\nA la ligne 48, remplacer Hello par Bonjour et enregistrer (CTRL + S).\n\nVérifier que votre site a bien été mis à jour.\n\n\n\n\n\n\n\nTip\n\n\n\nSi vous avez fermé l’onglet qui contient votre site de dev, vous pouvez le réouvrir en cherchant dans le terminal http://127.0.0.1:3000/ et en faisant un CTRL + clic dessus.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nActuellement votre site n’est pas disponible sur internet. Ce n’est qu’une prévisualisation. Le site est accessible uniquement temporairement sur un serveur temporaire de votre codespaces (en localhost ou 127.0.0.1 de votre codespaces).\n\n\n\nSuivant"
+  },
+  {
+    "objectID": "maj_projet.html",
+    "href": "maj_projet.html",
+    "title": "Mise à jour du site",
+    "section": "",
+    "text": "Nous allons ajouter une page sur l’historique météorologique en Occitanie. Pour cela nous créons un fichier meteo_occitanie.md dans le répertoire src.\nVous pouvez mettre le code suivant :\n# Météo en Occitanie\n\n```{js}\ndisplay(1 + 2);\n\n``` \nCe qui affichera :\n\n\n\n\n\n\n\nNote\n\n\n\nSi votre codespaces n’est plus actif, veuillez le relancer. Et pour relancer le site en dev, tapez dans la console : npm run dev dans le répertoire hello-framework\n\n\nVous avez pu le constater, la création de pages est très facile ! Et vous avez également constater que le fichier créé était en .md. C’est un markdown, que l’on connait déjà dans Rmarkdown ou dans Quarto.\nPour en savoir plus sur le markdown en Observable : Markdown en observable"
+  },
+  {
+    "objectID": "maj_projet.html#chargement-de-données",
+    "href": "maj_projet.html#chargement-de-données",
+    "title": "Mise à jour du site",
+    "section": "Chargement de données",
+    "text": "Chargement de données"
+  },
+  {
+    "objectID": "maj_projet.html#affichage-dun-tableau",
+    "href": "maj_projet.html#affichage-dun-tableau",
+    "title": "Mise à jour du site",
+    "section": "Affichage d’un tableau",
+    "text": "Affichage d’un tableau"
+  },
+  {
+    "objectID": "maj_projet.html#création-dun-graphique",
+    "href": "maj_projet.html#création-dun-graphique",
+    "title": "Mise à jour du site",
+    "section": "Création d’un graphique",
+    "text": "Création d’un graphique"
+  },
+  {
+    "objectID": "maj_projet.html#affichage-dune-carte",
+    "href": "maj_projet.html#affichage-dune-carte",
+    "title": "Mise à jour du site",
+    "section": "Affichage d’une carte",
+    "text": "Affichage d’une carte"
+  },
+  {
+    "objectID": "maj_projet.html#création-de-composant",
+    "href": "maj_projet.html#création-de-composant",
+    "title": "Mise à jour du site",
+    "section": "Création de composant",
+    "text": "Création de composant"
+  },
+  {
+    "objectID": "maj_projet.html#mise-en-forme-de-lensemble",
+    "href": "maj_projet.html#mise-en-forme-de-lensemble",
+    "title": "Mise à jour du site",
+    "section": "Mise en forme de l’ensemble",
+    "text": "Mise en forme de l’ensemble\n\nThème\nIl est possible d’appliquer des thèmes. Pour cela il faut mettre à jour l’entête du fichier .md en ajoutant : theme: \"glacier\" ou theme: [cotton, slate]\nVoir le détail des thèmes ici : https://observablehq.com/framework/themes.\n\n\nTexte en couleur\nVous pouvez écrire du texte en couleur, via une balise Html :\n\n<div class=\"red\">Ce texte est en rouge.</div>\n<div class=\"yellow\">Ce texte est en jaune.</div>\n<div class=\"green\">Ce texte est en vert.</div>\n<div class=\"blue\">Ce texte est en bleu.</div>\n<div class=\"muted\">Ce texte est en gris clair.</div>\n\n\nSuivant"
+  },
+  {
+    "objectID": "maj_projet.html#titre-de-niveau-2",
+    "href": "maj_projet.html#titre-de-niveau-2",
+    "title": "Mise à jour du site",
+    "section": "Titre de niveau 2",
+    "text": "Titre de niveau 2\n\nTitre de niveau 3`\n\nStyles\n` Pour le gras: Truc en gras\nPour l’italique: Truc en italique\nPour une citation :\n> Ceci est une citation `\n\n\nEntête\nDans le fichier .md vous pouvez tenter de mettre une section yaml qui ressemble à cela :\n---\ntitle: Météo Occitanie\ntoc: false\n---\nVous vous apercevez que le titre de la page indiquée dans le navigateur est mise à jour. Le paramètre toc: false indique qu’il n’y aura pas de sommaire (Table of contents) pour cette page.\nEn savoir plus sur le markdown : https://observablehq.com/framework/markdown"
+  },
+  {
+    "objectID": "maj_projet.html#zones-de-sélection-formulaires",
+    "href": "maj_projet.html#zones-de-sélection-formulaires",
+    "title": "Mise à jour du site",
+    "section": "Zones de sélection / formulaires",
+    "text": "Zones de sélection / formulaires"
+  },
+  {
+    "objectID": "maj_projet.html#mise-en-formes",
+    "href": "maj_projet.html#mise-en-formes",
+    "title": "Mise à jour du site",
+    "section": "Mise en formes",
+    "text": "Mise en formes\n\nCarte\nObservable utilise des cartes pour grouper et délimiter du contenu. Pour créer une carte, il suffit d’utiliser la balise div avec la class card :\n<div class=\"card\">\n\n\nGrille\nUne grille va contenir des cartes. Il est possible d’indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes :\n<div class=\"grid grid-cols-4\">\n  <div class=\"card\"><h1>A</h1></div>\n  <div class=\"card\"><h1>B</h1></div>\n  <div class=\"card\"><h1>C</h1></div>\n  <div class=\"card\"><h1>D</h1></div>\n</div>\nLes possibilités sont grid-cols-2, grid-cols-3, ou grid-cols-4.\nVoir les différentes possibilités de grille : https://observablehq.com/framework/markdown#grids\n\n\n\n\n\n\nNote\n\n\n\nRetravailler votre page de météo pour mettre les items dans des cartes et définissez une grille d’affichage.\n\n\n\n\nThème\nIl est possible d’appliquer des thèmes. Pour cela il faut mettre à jour l’entête du fichier .md en ajoutant : theme: \"glacier\" ou theme: [cotton, slate]\nVoir le détail des thèmes ici : https://observablehq.com/framework/themes.\n\n\nTexte en couleur\nVous pouvez écrire du texte en couleur, via une balise Html :\n\n<div class=\"red\">Ce texte est en rouge.</div>\n<div class=\"yellow\">Ce texte est en jaune.</div>\n<div class=\"green\">Ce texte est en vert.</div>\n<div class=\"blue\">Ce texte est en bleu.</div>\n<div class=\"muted\">Ce texte est en gris clair.</div>\n\n\n\nCréation de blocs mis en valeur :\nOn peut ajouter des blocs de note, tip, warning et caution :\n<div class=\"note\" label=\"Note\">C'est une note.</div>\n<div class=\"tip\" label=\"Astuce\">C'est une astuce.</div>\n<div class=\"warning\" label=\"⚠️ Danger ⚠️\">C'est une attention.</div>\n<div class=\"caution\" label>C'est une mise en garde.</div>\n\n\nSuivant"
+  },
+  {
+    "objectID": "aller_plus_loin.html",
+    "href": "aller_plus_loin.html",
+    "title": "Pour aller plus loin en observable framework",
+    "section": "",
+    "text": "Vous pouvez créer un fichier example-markdown.md et copier les codes suivants pour voir le résultat dans la page web.\n\n\n# Titre de niveau 1\n\n## Titre de niveau 2\n\n### Titre de niveau 3\n\n\n\nPour le gras: **Truc en gras**     \n\nPour l'italique: *Truc en italique*     \n\nPour une citation :    \n> Ceci est une citation\n\n\n\nColumn 1   | Column 2     | Column 3\n---------- | ------------ | ----------\nCell 1-1   | Cell 2-1     | Cell 3-1\nCell 1-2   | Cell 2-2     | Cell 3-2\n\n\n\n- red\n- green\n- blue\n  - light blue\n  - dark blue\n\n1. first\n1. second\n1. third\n   1. third first\n   1. third second\n\n\n\n<https://google.com>      \n[relative link](./example-dashboard)      \n[external link](https://lequipe.fr)      \n\n\n\n![A horse](./horse.jpg)\n![A happy kitten](https://placekitten.com/200/300)\n\n\n\nDans le fichier .md vous pouvez tenter de mettre une section yaml qui ressemble à cela :\n---\ntitle: Météo Occitanie\ntoc: false\n---\nVous vous apercevez que le titre de la page indiquée dans le navigateur est mise à jour. Le paramètre toc: false indique qu’il n’y aura pas de sommaire (Table of contents) pour cette page.\n\n\n\nIl est possible de mettre du Html directement dans le markdown. Essayez par exemple ce code :\n<details>\n  <summary>Clic ici </summary>\n    Ce texte n'est pas visible par défaut ! \n</details>\nEn savoir plus sur le markdown : https://observablehq.com/framework/markdown"
+  },
+  {
+    "objectID": "aller_plus_loin.html#création-de-composant",
+    "href": "aller_plus_loin.html#création-de-composant",
+    "title": "Pour aller plus loin en observable framework",
+    "section": "Création de composant",
+    "text": "Création de composant"
+  },
+  {
+    "objectID": "aller_plus_loin.html#chargement-de-données",
+    "href": "aller_plus_loin.html#chargement-de-données",
+    "title": "Pour aller plus loin en observable framework",
+    "section": "Chargement de données",
+    "text": "Chargement de données"
+  },
+  {
+    "objectID": "maj_projet.html#affichage-dune-carte-map",
+    "href": "maj_projet.html#affichage-dune-carte-map",
+    "title": "Mise à jour du site",
+    "section": "Affichage d’une carte (map)",
+    "text": "Affichage d’une carte (map)"
+  },
+  {
+    "objectID": "maj_projet.html#mise-en-forme",
+    "href": "maj_projet.html#mise-en-forme",
+    "title": "Mise à jour du site",
+    "section": "Mise en forme",
+    "text": "Mise en forme\n\nCarte (card)\nObservable utilise des cartes pour grouper et délimiter du contenu. Pour créer une carte, il suffit d’utiliser la balise div avec la class card :\n<div class=\"card\">\n\n\nGrille\nUne grille va contenir des cartes. Il est possible d’indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes :\n<div class=\"grid grid-cols-4\">\n  <div class=\"card\"><h1>A</h1></div>\n  <div class=\"card\"><h1>B</h1></div>\n  <div class=\"card\"><h1>C</h1></div>\n  <div class=\"card\"><h1>D</h1></div>\n</div>\nLes possibilités sont grid-cols-2, grid-cols-3, ou grid-cols-4.\nVoir les différentes possibilités de grille : https://observablehq.com/framework/markdown#grids\n\n\n\n\n\n\nNote\n\n\n\nRetravailler votre page de météo pour mettre les items dans des cartes et définissez une grille d’affichage.\n\n\n\n\nThème\nIl est possible d’appliquer des thèmes. Pour cela il faut mettre à jour l’entête du fichier .md en ajoutant : theme: \"glacier\" ou theme: [cotton, slate]\nVoir le détail des thèmes ici : https://observablehq.com/framework/themes.\n\n\nTexte en couleur\nVous pouvez écrire du texte en couleur, via une balise Html :\n\n<div class=\"red\">Ce texte est en rouge.</div>\n<div class=\"yellow\">Ce texte est en jaune.</div>\n<div class=\"green\">Ce texte est en vert.</div>\n<div class=\"blue\">Ce texte est en bleu.</div>\n<div class=\"muted\">Ce texte est en gris clair.</div>\n\n\n\nCréation de blocs mis en valeur :\nOn peut ajouter des blocs de note, tip, warning et caution :\n<div class=\"note\" label=\"Note\">C'est une note.</div>\n<div class=\"tip\" label=\"Astuce\">C'est une astuce.</div>\n<div class=\"warning\" label=\"⚠️ Danger ⚠️\">C'est une attention.</div>\n<div class=\"caution\" label>C'est une mise en garde.</div>\n\n\nSuivant"
+  },
+  {
+    "objectID": "sources.html#markdown",
+    "href": "sources.html#markdown",
+    "title": "Liste des sources utiles",
+    "section": "Markdown",
+    "text": "Markdown\n\nhttps://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax\nExtension de markdown en Observable : https://observablehq.com/framework/markdown#basic-syntax"
   }
 ]

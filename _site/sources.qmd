@@ -1,0 +1,9 @@
+---
+title: "Liste des sources utiles"
+---
+
+## Git et Github
+  
+-   <https://docs.github.com/fr>
+-   <https://www.jesuisundev.com/comprendre-git-en-7-minutes/>
+-   <https://kinsta.com/fr/base-de-connaissances/git-vs-github/>
