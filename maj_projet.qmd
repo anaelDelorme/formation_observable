@@ -249,7 +249,114 @@ En savoir plus sur les Inputs.table : <https://observablehq.com/framework/inputs
 
 ## Création d'un graphique
 
+Voyons maintenant comment faire un graphique avec Observable. Il est très simple faire des graphiques en utilisant la library **Observable Plot** car elle est incluse par défaut avec Observable framework.    
+Plus d'infos :  <https://observablehq.com/plot/>
+
+### Graphique en ligne
+
+Je souhaite avec les courbes de températures max et min pour la station d'Auzeville-Tolosane. Pour réaliser ce graphique, nous allons :    
+
+-   filter les données sur la station "AUZEVILLE-TOLOSANE-INRA"
+-   créer un Plot avec un titre, un axe des y avec un quadrillage horizontal de 10° et deux line avec en x la date et en y temp_min et temp_max. Les courbes auront des couleurs steelblue pour le min et tomato pour le max.     
+-   afficher le graphique grâce à un display.
+
+Voici le code :
+````
+```js
+// Filtrer les données pour le poste "AUZEVILLE-TOLOSANE-INRA"
+const donneesFiltrees = meteo_31_2023_2024_extrait.filter(d => d.nom_poste === "AUZEVILLE-TOLOSANE-INRA");
+
+// Créer un graphique combiné pour temp_min et temp_max
+const graphiqueTemp = Plot.plot({
+  title: "Températures minimales et maximales pour AUZEVILLE-TOLOSANE-INRA",
+  y: {grid: true, inset: 10, label: "Température (°C)"},
+  marks: [
+    Plot.lineY(donneesFiltrees, {
+      x: "date",
+      y: "temp_min",
+      stroke: "steelblue",
+      label: "Temp. min"
+    }),
+    Plot.lineY(donneesFiltrees, {
+      x: "date",
+      y: "temp_max",
+      stroke: "tomato",
+      label: "Temp. max"
+    })
+  ]
+});
+
+// Afficher le graphique
+display(graphiqueTemp);
+```
+````
+
+### Graphique en bar
+
+Maintenant je veux juste des barres verticales pour le précipitations : 
+
+````
+```js
+// Créer un graphique pour les précipitations
+const barTemp = Plot.plot({
+  title: "Précipitations pour AUZEVILLE-TOLOSANE-INRA",
+  y: {grid: true, label: "Précipitations (mm)"},
+  x: {
+    grid: true,
+    label: "Date",
+    // Utiliser une fonction pour filtrer les ticks pour afficher un tick tous les 3 mois
+    ticks: d3.utcMonth.every(3)
+  },
+  marks: [
+    Plot.barY(donneesFiltrees, {
+      x: "date",
+      y: "precipitation",
+      fill: "darkslateblue"
+          }),
+    Plot.ruleY([0]) // permet d'afficher une horizontal à 0
+  ]
+});
+
+// Afficher le graphique
+display(barTemp);
+```
+````
+
 ## Affichage d'une carte (map)
+
+Encore une bonne nouvelle : Observable Framework a chargé par défaut Leaflet. Cela nous permet de créer des cartes interactives très facilement avec la fonction **L**.
+
+Par exemple, j'aimerais afficher une carte avec les températures maximales pour une date donnée pour toutes les stations du département.
+
+Comme pour les exemples précédents je commence par filtrer mes données et j'ajoute le code suivant : 
+
+````
+```js
+// Filtrer les données pour la date du 21-05-2023
+const donneesDuJour = meteo_31_2023_2024_extrait.filter(d => d.date.toISOString().startsWith("2023-05-21"));
+
+// Créer la section de la page (div) qui contiendra la carte
+const div = display(document.createElement("div"));
+div.style = "height: 400px;";
+
+// Créer la carte avec leaflet et centrer sur la Haute-Garonne
+const map = L.map(div)
+  .setView([43.2927, 1.8828], 8);
+
+// Ajouter une couche de tuiles à la carte
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+})
+  .addTo(map);
+
+// Ajouter un marqueur pour chaque station météo
+donneesDuJour.forEach(station => {
+  L.marker([station.lat, station.lon]) // création d'un marker aux coordonées de la station
+    .addTo(map)   // que l'on ajoute à la carte qui s'appelle map
+    .bindPopup(`Station de ${station.nom_poste} </br> Température min: ${station.temp_min}°C </br> Température max: ${station.temp_max}°C </br> Précipitations: ${station.precipitation}mm`); // et ajout d'un popup qui contient les infos pertinentes
+})
+```
+````
 
 ## Zones de sélection / formulaires
 
