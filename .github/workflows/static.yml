@@ -37,9 +37,6 @@ jobs:
       - name: Install Jupyter
         run: python3 -m pip install jupyter
 
-      - name: Install Jupyter
-        run: python3 -m pip install jupyter
-
       - name: Install R packages 
         run: |
           mkdir -p ~/R_libs
