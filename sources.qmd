@@ -14,10 +14,16 @@ title: "Liste des sources utiles"
 -   Framework (projects): <https://observablehq.com/framework/>
 -   Framework sur Github: <https://github.com/observablehq/framework>
 -   Exemples: <https://observablehq.com/explore>
--   Plot : <https://observablehq.com/plot/>
+-   Plot : <https://observablehq.com/plot/> et <https://observablehq.com/framework/lib/plot>
 -   Notebook : <https://observablehq.com/documentation/notebooks/>
 
 ## Markdown   
 
 -   <https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax>
 -   Extension de markdown en Observable : <https://observablehq.com/framework/markdown#basic-syntax>
+
+
+## Leaflet
+
+-   <https://leafletjs.com/>
+-   Layers utilisable avec prévisualisation : <https://leaflet-extras.github.io/leaflet-providers/preview/>

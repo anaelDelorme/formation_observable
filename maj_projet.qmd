@@ -155,12 +155,9 @@ display(objetTrouve)
 En Javascript les données au format date ne peuvent pas être comparées via un `===`. Pour les comparer il faut utilser la fonction getTime() : `date1.getTime() === date2.getTime()`.
 :::
 
-Puis j'écris une phrase directement en markdown en faisant référence aux données grâce au caractère **$**. Par exemple : 
-Les températures minimale et maximale pour la station ${nom_poste_recherche} à la date du ${dateFormatee} sont ${objetTrouve.temp_min}°C et ${objetTrouve.temp_max}°C.
+Puis j'écris une phrase directement en markdown en faisant référence aux données grâce au caractère **$**. Par exemple :     
+`Les températures minimale et maximale pour la station ${nom_poste_recherche} à la date du ${dateFormatee} sont ${objetTrouve.temp_min}°C et ${objetTrouve.temp_max}°C.`
 
-
-
-:::
 
 ## Création d'un tableau
 
@@ -358,7 +355,49 @@ donneesDuJour.forEach(station => {
 ```
 ````
 
+
+Il est possible d'afficher directement les températures sur la carte comme une carte de météo. Le code est un peu plus compliqué et vous le trouverez dans la page  [Aller plus loin](./aller_plus_loin).    
+
+
 ## Zones de sélection / formulaires
+
+Jusqu'à présent nous avons fixé les paramètres pour créer les tableaux, graphiques et cartes. Avec Observable Framework il est très facile de créer des zones de sélection ou des formulaires plus complexes pour permettre aux utilisateurs de filter ou sélectionner les données pertinentes.     
+
+Pour cela nous allons de nouveau des Inputs (vu précédemment pour les tableaux). Il y a plusieurs types d'inputs utilisables comme éléments d'interface qui prennent les données saisies l'utilisateur et permette une interaction sur les données affichées : dropdowns, radios, sliders, and text boxes (listes déroulantes, radio-bouttons, curseurs et zones de texte).
+
+Pour comprendre le fonctionnement, nous allons créer une liste déroulante avec le nom des stations météos. Pour cela nous allons récupérer la liste des stations et l'afficher dans un Inputs.select (<https://observablehq.com/framework/inputs/select>).
+
+
+Voici le code pour une liste déroulante simple :
+
+````
+```js
+//un tableau simple avec juste le nom des stations météo
+const nomsStations = Array.from(new Set(meteo_31_2023_2024_extrait.map(d => d.nom_poste)));
+
+//On met ça dans un Inputs.select et un view pour l'afficher
+const color = view(Inputs.select(nomsStations, {label: "Choisir une station météo"}));
+
+```
+````
+
+Maintenant je pourrais utiliser le résultat de cette liste pour afficher le tableau des données uniquement pour cette station.
+
+````
+```js
+// Filtrage des données avec le résultat de l'input select
+const donneesChoisies = meteo_31_2023_2024_extrait.filter(d => d.nom_poste === nomsStations_choix);
+
+//affichage du tableau 
+display(Inputs.table(donneesChoisies))
+```
+
+:::callout-warning
+Il ne faut pas mettre dans le même bloc de code, la liste déroulante et l'utilisation de la liste déroulante.
+:::
+````
+
+Vous pouvez utiliser ce principe pour le graphique et la carte.
 
 ## Mise en forme
 
@@ -368,8 +407,37 @@ donneesDuJour.forEach(station => {
 Observable utilise des cartes pour grouper et délimiter du contenu. Pour créer une carte, il suffit d'utiliser la balise div avec la class *card* :
 
 ````
-<div class="card">
+<div class="card"></div>
 ````
+
+Essayer cette balise pour mettre dedans un tableau, un graphique ou une carte.
+
+:::callout-tip
+Il n'est pas possible de mettre du code js dans une balise div. Il faut créer une fonction dans un bloc js en dehors de la div, et l'appeler dans la div. Voici un exemple : 
+````
+```js
+function launchTimeline(data, {width} = {}) {
+  return Plot.plot({
+    title: "Launches over the years",
+    width,
+    height: 300,
+    y: {grid: true, label: "Launches"},
+    color: {...color, legend: true},
+    marks: [
+      Plot.rectY(data, Plot.binX({y: "count"}, {x: "date", fill: "state", interval: "year", tip: true})),
+      Plot.ruleY([0])
+    ]
+  });
+}
+```
+
+<div class="grid grid-cols-1">
+  <div class="card">
+    ${resize((width) => launchTimeline(launches, {width}))}
+  </div>
+</div>
+````
+:::
 
 ### Grille
 
@@ -408,7 +476,7 @@ Vous pouvez écrire du texte en couleur, via une balise Html :
 -  `<div class="muted">Ce texte est en gris clair.</div>`
 
 
-### Création de blocs mis en valeur : 
+### Création de blocs mis en valeur
  
 On peut ajouter des blocs de *note*, *tip*, *warning* et *caution* : 
 

@@ -98,3 +98,182 @@ En savoir plus sur le markdown : <https://observablehq.com/framework/markdown>
 
 
 ## Chargement de données
+
+Observable a une fonctionnalité très intéressante : Data loader.   
+Observable produit des sites web de tableaux de bord : ces sites doivent se charger rapidement. Pour éviter de longs temps de chargements, Observable propose de précharger les données via un data loader. Le principe est simple : 
+
+-   création d'un programme de chargement des données
+-   à chaque construction du site, le programme est lancé et le jeu de données est accessible directement via un FileAttachment.
+
+**Bonne nouvelle : le Data Loader peut être développé en Javascript mais également en Python ou en R**
+
+### Installation de R dans Github Codespaces
+
+Nous choisisson de coder le Data loader en R. Mais R n'est pas installer par défaut dans Codespaces. Pour l'installer c'est très simple parce que le codespaces est en Linux Ubuntu. Dans un terminal lancer les codes suivantes les unes après les autres :
+
+````
+sudo apt update
+
+sudo apt upgrade
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+sudo add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
+
+sudo apt update
+
+sudo apt install r-base
+
+````
+
+Vous pouvez vérifier l'installation en lancer dans le terminal la commande `R`. Vous rentrez alors dans un terminal R et vous pouvez écrire du Rbase, par exemple : `head(penguins)`
+
+### Création du Data loader en R
+
+Le data loader se met dans le répertoire `src\data`. Il se nomme du nom du fichier souhaité à la fin avec l'extension .R ajouté. Dans notre cas on l'appellera `meteo.json.R` car l'on veut créer un fichier meteo.js en R à chaque build de notre site Observable.               
+
+Voici à quoi pourrait ressembler notre data loader :
+
+```{r} 
+#|eval= false
+#|echo= true
+
+library(readr)
+library(purrr)
+library(dplyr)
+library(jsonlite)
+
+setwd("/workspaces/observable_formation_SSP/formation/src/data/")
+
+# Lister tous les fichiers CSV dans le répertoire
+fichiers_csv <- list.files(pattern = "\\.csv$", full.names = TRUE)
+
+# Lire et combiner tous les fichiers CSV
+donnees_combinees <- fichiers_csv %>%
+  map_dfr(~ read_delim(.x,  delim = ";")) %>%
+            select(NUM_POSTE, NOM_USUEL, LAT, LON, AAAAMMJJ, RR, TN, TX, TAMPLI, DG) %>%
+            rename(id_poste = NUM_POSTE,
+                   nom_poste = NOM_USUEL,
+                   lat = LAT,
+                   lon = LON,
+                   date = AAAAMMJJ,
+                   precipitation = RR,
+                   temp_min = TN,
+                   temp_max = TX,
+                   ampli_thermique = TAMPLI,
+                   duree_gel_minute = DG)
+
+# Exporter les données en JSON
+write_json(donnees_combinees, path = "meteo.json")
+
+
+```
+
+:::callout-note
+Il se peut que vous deviez installer les packages nécessaires. Dans le terminal, lancer **R** puis faites un classique **install.packages("nom_package")**.
+:::
+
+:::callout-note
+Il se peut que vous deviez installer les packages nécessaires. Dans le terminal, lancer **R** puis faites un classique **install.packages("nom_package")**.
+:::
+
+
+### Ouverture des données
+
+Tout simplement, faites un bloc de code 
+
+````
+```js
+// import des données de  tous les départements de l'Occitanie en 2023 et 2024
+const meteo =  FileAttachment("data/meteo.json").json();
+``` 
+````
+
+
+## Carte avancée
+
+
+Pour faire une carte de température, il faut jouer sur le style (css) et sur le marker (avec en plus une fonction pour la couleur).
+
+Voici le code à ajouter directement dans le markdown pour le style : 
+
+````
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    #map {
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom:0;
+    }
+
+    .myIcon div {
+      display: flex; /* Utiliser flexbox pour centrer le contenu */
+      justify-content: center; /* Centrer horizontalement */
+      align-items: center; /* Centrer verticalement */
+      border: solid grey 1px;
+      border-radius: 100%;
+      opacity: 80%;
+      height: 100%;
+      width: 100%;
+      }
+
+  
+  </style>
+
+````
+Et voilà le code javascript pour le leaflet :   
+
+````
+```js
+
+ function choseColor(value) {
+          if (value < 0) {
+                return "#7EBCF2";
+          } else if (value < 10) {
+                return "#7E97F2";
+          } else if (value < 20) {
+                return "#F2C335";
+          } else if (value < 30) {
+                return "#F29422";
+          } else {
+                return "#F21313";
+          }
+    };
+
+// Initialiser la carte Leaflet
+const div = display(document.createElement("div"));
+div.style = "height: 400px;";
+
+// Insérer la carte dans le div
+const map = L.map(div)
+  .setView([43.2927, 1.8828], 8);
+
+// Ajouter une couche de tuiles à la carte
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd'}).addTo(map);
+
+// Ajouter un marqueur pour chaque station météo
+donneesDuJour.forEach(station => {
+  const color = choseColor(station.temp_max);
+  const marker = L.marker([station.lat, station.lon], {
+    icon: L.divIcon({
+                       html: '<div style="background:'+color+';">' + station.temp_max.toFixed(1) + '°</div>',
+                       iconSize:[40, 20], 
+                      className: 'myIcon'   // Classe CSS pour le style
+    }),
+    zIndexOffset: 1000     // S'assurer que le label est au-dessus des autres couches
+  }).addTo(map);
+  marker.bindPopup(`Station de ${station.nom_poste.charAt(0).toUpperCase() + station.nom_poste.slice(1).toLowerCase()} </br> Température min: ${station.temp_min.toFixed(1)}°C </br> Température max: ${station.temp_max.toFixed(1)}°C </br> Précipitations: ${station.precipitation.toFixed(1)}mm`);
+});
+
+
+
+```
+
+````
