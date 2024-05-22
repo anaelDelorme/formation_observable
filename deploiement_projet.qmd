@@ -8,7 +8,7 @@ Nous pouvons être très content de nous : nous avons réussi à développer un 
 
 Traditionnellement, face à cette question, nous devons nous tourner vers un service informatique et monter un projet de déploiement qui peut être long, s'il n'est pas impossible car pas dans les standards informatiques.  
 
-![](img/create_page.png)
+![](img/ou_deployer.jpg)
 
 
 ## Déploiement simple avec Observable Projects

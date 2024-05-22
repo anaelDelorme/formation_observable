@@ -16,6 +16,7 @@ title: "Liste des sources utiles"
 -   Exemples: <https://observablehq.com/explore>
 -   Plot : <https://observablehq.com/plot/> et <https://observablehq.com/framework/lib/plot>
 -   Notebook : <https://observablehq.com/documentation/notebooks/>
+-   Déploiement sur Github Pages : <https://notes.billmill.org/programming/observable_framework/github_workflow_for_publishing_an_observable_framework.html>
 
 ## Markdown   
 
