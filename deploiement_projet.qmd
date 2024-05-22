@@ -73,7 +73,7 @@ Voici les étapes à suivre :
 
 ![](img/github_pages_settings.png)
 
--   Cliquer sur **Create your own** pour créer votre yaml
+-   Cliquer sur **Create your own** pour créer votre yaml. Pensez à l'extension .yml.
 
 Voici à quoi il doit ressembler : 
 
@@ -101,15 +101,19 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+            cd formation
+            npm ci
 
       - name: Build
-        run: npm run build
+        run: |
+            cd formation
+            npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./formation/dist
 
   deploy:
     needs: build
@@ -124,9 +128,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          # Spécifiez le sous-répertoire "formation" pour le déploiement.
-          subdirectory: formation
 
 
 ````
@@ -142,10 +143,17 @@ Et de valider :
 
 ### Vérification du déploiement
 
-Pour vérifier le déploiement, il faut aller dans l'onglet Actions du repo Github : 
+Pour vérifier le déploiement, il faut aller dans l'onglet Actions du repo Github. Ici on voit que l'actions n'a pas fonctionné. En cliquant dessus, on pourra voir l'erreur et corriger le yml. 
+
+![](img/gtihub_actions_fail.png)
 
 
+Pour corriger le YAML, je vous conseille d'aller sur Codespaces, dans l'onglet Git de faire un pull pour récupére le fichier créé dans Github. Et vous pouvez le modifier ici et commit/push pour l'envoyer à Github et lancer l'action :
 
+![](img/github_pull.png)
+
+
+Si tout se passe bien, cela déploie le site comme ici : [https://anaeldelorme.github.io/observable_formation_SSP/](https://anaeldelorme.github.io/observable_formation_SSP/)
 
 
 <button type="button" class="btn btn-primary btn-lg">
