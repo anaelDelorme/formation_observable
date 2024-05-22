@@ -392,9 +392,9 @@ const donneesChoisies = meteo_31_2023_2024_extrait.filter(d => d.nom_poste === n
 display(Inputs.table(donneesChoisies))
 ```
 
-:::callout-warning
+::::callout-warning
 Il ne faut pas mettre dans le même bloc de code, la liste déroulante et l'utilisation de la liste déroulante.
-:::
+::::
 ````
 
 Vous pouvez utiliser ce principe pour le graphique et la carte.
