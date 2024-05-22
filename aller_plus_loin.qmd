@@ -135,8 +135,8 @@ Le data loader se met dans le répertoire `src\data`. Il se nomme du nom du fich
 Voici à quoi pourrait ressembler notre data loader :
 
 ```{r} 
-#|eval= false
-#|echo= true
+#| eval: false
+#| echo: true
 
 library(readr)
 library(purrr)
@@ -173,8 +173,8 @@ write_json(donnees_combinees, path = "meteo.json")
 Il se peut que vous deviez installer les packages nécessaires. Dans le terminal, lancer **R** puis faites un classique **install.packages("nom_package")**.
 :::
 
-:::callout-note
-Il se peut que vous deviez installer les packages nécessaires. Dans le terminal, lancer **R** puis faites un classique **install.packages("nom_package")**.
+:::callout-tip
+Télécharger les autres csv d'ici : <https://github.com/anaelDelorme/observable_formation_SSP/blob/main/formation/src/data/> et mettez les dans **src/data**.
 :::
 
 
@@ -188,6 +188,7 @@ Tout simplement, faites un bloc de code
 const meteo =  FileAttachment("data/meteo.json").json();
 ``` 
 ````
+Observable va chercher data/meteo.json mais ne va pas le trouver. Il va donc chercher s'il existe un data/meteo.json avec une deuxième extension .pj, .py, .R... Et il va le lancer pour créer le meteo.json.
 
 
 ## Carte avancée
