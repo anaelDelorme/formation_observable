@@ -1,3 +1,35 @@
 ---
 title: "Présentation d'Observable Notebook"
 ---
+
+## Notebook ?
+
+Observable Notebook est une plateforme collaborative qui permet d’explorer, analyser et partager des données de manière interactive. Voici quelques points forts :
+
+**1. Visualisations interactives**     
+Grâce à D3.js (Data-Driven Documents), vous pouvez créer des visualisations dynamiques directement dans Observable Notebook. Cela facilite la compréhension des données et permet d’explorer des scénarios différents.
+
+**2. Réactivité**     
+Observable Notebook prend en charge la réactivité au niveau du langage. Votre code se met à jour automatiquement lorsque les variables changent. Cela facilite l’expérimentation et la mise à jour des visualisations sans recharger la page.
+
+**3. Collaboration**    
+Observable Notebook est conçu pour la collaboration. Vous pouvez travailler avec d’autres utilisateurs en temps réel, commenter le code et partager vos découvertes.
+
+
+## Notebook vs Framework
+
+**Notebooks illimités **: Vous pouvez créer autant de notebooks que vous le souhaitez dans Observable Notebook. Chaque notebook est un espace de travail indépendant pour explorer et analyser vos données.
+
+**Un seul projet déployable** : Framework se concentre sur un seul projet à la fois (astuce : passer par Github Pages pour déployer plusieurs projets).    
+
+**Serveur de développement requis** : Pour utiliser Framework, vous avez besoin d’un serveur de développement local (par exemple, GitHub + Codespaces). Tout se fait en ligne pour Notebook avec un simple navigateur web.
+
+**Site web pro**: Framework génère des sites web plus aboutis, adaptés à la production. Vous pouvez personnaliser le style et la mise en page pour obtenir un résultat professionnel.
+
+En résumé, Observable Notebook est idéal pour l’exploration et la collaboration, tandis que Framework est plus adapté pour créer des sites statiques prêts à être déployés   
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="creee_premier_notebook.qmd">Suivant</a>
+
+</button>

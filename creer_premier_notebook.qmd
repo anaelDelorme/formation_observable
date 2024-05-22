@@ -1,3 +1,44 @@
 ---
 title: "Création d'un premier notebook"
 ---
+
+
+Ici nous allons reprendre quelques éléments de la météo d'Occitanie que nous allons mettre dans un notebook.   
+
+## Initialisation
+
+Il faut aller sur le site observable : <https://observablehq.com/> et se connecter. Puis cliquer sur Notebooks et New :
+
+![](img/new_notebook.png)
+
+Je vous poropose de partir d'un notebook vide. Vous pourrez ensuite en créer d'autres à partir des modèles.    
+Choisissez la visibilité **Public**.   
+
+Vous arrivez sur une page vierge avec un titre vide.   
+Commencez par saisir le titre : `# Météo en Occitanie`. Cliquer à droite sur la flèche **Run cell** ou faites un Maj+Entrée pour jouer le code (markdown) que vous venez de saisir.
+
+
+::::callout-note
+Noter que la sauvegarde des modifications est automatique.
+::::
+
+## Interface
+
+La page de notebook est constituée de cellules qui sont du code en markdown, js, html... Voici le détail des bouttons : 
+
+![](img/notebook_cell.png)
+
+## Ajout et import des données
+
+## Affichage d'un tableau
+
+## Création d'un graphique
+
+## Création d'une carte
+
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="presentation_quarto_observable.qmd">Suivant</a>
+
+</button>

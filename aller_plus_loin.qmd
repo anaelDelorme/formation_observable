@@ -94,9 +94,6 @@ Il est possible de mettre du Html directement dans le markdown. Essayez par exem
 
 En savoir plus sur le markdown : <https://observablehq.com/framework/markdown>
 
-## Création de composant
-
-
 ## Chargement de données
 
 Observable a une fonctionnalité très intéressante : Data loader.   
@@ -278,3 +275,9 @@ donneesDuJour.forEach(station => {
 ```
 
 ````
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="presentation_notebook.qmd">Suivant</a>
+
+</button>
