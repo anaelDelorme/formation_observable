@@ -28,14 +28,287 @@ La page de notebook est constituée de cellules qui sont du code en markdown, js
 
 ![](img/notebook_cell.png)
 
+En cliquant sur les trois points verticaux, vous avez accès au menu de la cellule : 
+
+![](img/notebook_menu.png)
+
+Je vous propose d'ajouter une cellule en dessous du titre et de choisir markdown pour mettre du texte : 
+
+![](img/notebook_new_cell.png)
+
+Vous pouvez saisir du texte au format markdown ici. Par exemple : `Ce notebook est créé dans le cadre de la formation SSP sur **Observable**. Il permet de visualiser quelques données de la météo en 2023 et 2024 en région *Occitanie*."`. Puis faites un ctrl + entrée ou clic sur le bouton à droite pour exécuter. 
+
+
 ## Ajout et import des données
+
+Observable Notebook facilite l'ajout de données. Pour cela aidez-vous du menu à droite et en particulier le premier en haut avec le trombone. 
+
+![](img/notebook_file_attach.png)
+
+En cliquant sur le +, vous pouvez choisir le fichier à importer. Je vous propose de charger tous les csv des différents départements. A récupérer sur la page <https://observablehq.com/d/38615faa82056cc8> (à droite : Files + **...** + Download)
+
+Voilà le résultat :    
+
+![](img/notebook_file_uploaded.png)
 
 ## Affichage d'un tableau
 
+A ce stade les fichiers sont remontés dans Observable Notebook, mais ne sont pas chargés dans votre notebook. Pour cela il faut cliquer sur le bouton à droite du fichier **Insert into notebook**.
+
+On obtient bien l'import des données mais le résultat n'est pas ok :
+
+![](img\file_import_csv_auto.png)
+
+Le format ";" de séparation n'est pas détecté et une seule colonne est crée (l'import de csv n'est qu'avec la virgule comme séparateur). 
+
+Pour résoudre le problème, la solution la plus élégante est de transformer le csv avec **;** en csv avec **,**. Voici le résultat :  
+
+![](img/import_csv_virgule.png)
+
+
+Vous pouvez maintenant : 
+
+-   modifier le nom de l'import dans la cellule indiquée)    
+-   changer le nom et le type des colonnes via l'interface en haut des colonnes  
+-   sélectionner les colonnes à garder :
+
+![](img/notebook_choix_colonne.png)
+
+
+En savoir plus sur les imports de données : <https://observablehq.com/documentation/data/files/file-attachments>
+
+
+::::callout-tip
+
+En Observable Notebook, il n'y a pas d'ordre dans l'exécution des cellules dans la page. On peut tout à fait charger les données en bas de la page alors qu'on en a besoin en haut.     
+Ma recommandation : mettre en bas de page le chargement des données et les premiers pré-traitements. Ainsi quand on ouvre le notebook, on a directement des informations pertinentes.
+
+::::
+
+
 ## Création d'un graphique
+
+Vous pouvez ajouter une nouvelle cellule pour créer un graphique : 
+
+![](img/notebook_plot.png)
+
+J'aimerais par exemple avoir les données de température min et max pour la station d'Auzeville. Je dois commencer par filtrer mes données. J'ajoute en bas du notebook la cellule javascript de filtre : 
+
+````
+meteo_auzeville = meteo_31.filter((d) => {
+  if (d.nom_poste == "AUZEVILLE-TOLOSANE-INRA") {
+    return true;
+  }
+  return false;
+})
+
+````
+
+Il faut que je modifie la colonne date pour la mettre au format Date. Pour cela je crée une cellule javascript pour mettre la fonction de conversion et une autre pour l'appeler : 
+
+````
+function convertToDate(aaaammjj) {
+  const data_char = aaaammjj.toString();
+  if (/^\d{8}$/.test(data_char)) {
+    const year = data_char.substring(0, 4);
+    const month = data_char.substring(4, 6);
+    const day = data_char.substring(6, 8);
+
+    // Créer un nouvel objet Date
+    return new Date(`${year}-${month}-${day}`);
+  } else {
+    throw new Error('La chaîne doit être au format AAAAMMJJ');
+  }
+}
+
+````
+
+Et
+
+````
+meteo_auzeville1 = meteo_auzeville.map(row => ({
+  ...row,
+  date1: convertToDate(row.date)
+}));
+
+````
+
+Enfin j'ajoute dans le haut une cellule de type **Moving average line-chart**. Il me reste plus qu'à modifier les paramètres : 
+
+````
+Plot.plot({
+title: "Températures minimales et maximales pour AUZEVILLE-TOLOSANE-INRA",
+  y: {grid: true, inset: 10, label: "Température (°C)"},
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(meteo_auzeville1, Plot.windowY({x: "date1", y: "temp_min", k: 10, reduce: "mean",
+      stroke: "steelblue",
+      label: "Temp. min"})),
+    Plot.lineY(meteo_auzeville1, Plot.windowY({x: "date1", y: "temp_max", k: 10, reduce: "mean",
+      stroke: "tomato",
+      label: "Temp. max"}))
+  ]
+})
+
+````
+
+## Interactions
+
+L'intérête du Notebook est de pouvoir ajouter des boutons ou des listes permettant de rendre la page interactive. Par exemple je vais ajouter une liste déroulante pour choisir la station à afficher.       
+
+Au préalable je dois créer la liste des stations à afficher via les 3 étapes : 
+
+````
+nomsStationsUniques = Array.from(new Set(meteo_31.map(d => d.nom_poste)))
+  .reduce((acc, nom_poste) => {
+    if (!acc[nom_poste]) {
+      acc[nom_poste] = {
+        nom_poste: nom_poste,
+        nom_poste_formate: nom_poste.charAt(0).toUpperCase() + nom_poste.slice(1).toLowerCase()
+      };
+    }
+    return acc;
+  }, {});
+````
+Puis : 
+
+````
+nomsStations = Object.values(nomsStationsUniques);
+
+````
+
+Enfin : 
+
+````
+nomsStationsTriesEtFormates = nomsStations.sort((a, b) => 
+  a.nom_poste_formate.localeCompare(b.nom_poste_formate)
+);
+````
+
+Puis j'ajoute une cellule de type Select :
+
+![](img/notebook_inpu.png)
+
+
+et je donne les informations suivantes : 
+
+````
+viewof nomsStations_choix = Inputs.select(nomsStationsTriesEtFormates, {
+  label: "Station météo :",
+  value: d => d.nom_poste, 
+  format: d => d.nom_poste_formate
+})
+
+````
+
+Et pour une prise en compte dans le graphique je dois changer mes fonctions suivantes : 
+
+````
+meteo_choix_station = meteo_31.filter((d) => {
+  if (d.nom_poste == nomsStations_choix.nom_poste) {
+    return true;
+  }
+  return false;
+})
+
+````
+
+````
+meteo_choix_station1 = meteo_choix_station.map(row => ({
+  ...row,
+  date1: convertToDate(row.date)
+}));
+````
+
+````
+Plot.plot({
+title: "Températures minimales et maximales pour " + nomsStations_choix.nom_poste_formate,
+  y: {grid: true, inset: 10, label: "Température (°C)"},
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(meteo_choix_station1, Plot.windowY({x: "date1", y: "temp_min", k: 10, reduce: "mean",
+      stroke: "steelblue",
+      label: "Temp. min"})),
+    Plot.lineY(meteo_choix_station1, Plot.windowY({x: "date1", y: "temp_max", k: 10, reduce: "mean",
+      stroke: "tomato",
+      label: "Temp. max"}))
+  ]
+})
+````
 
 ## Création d'une carte
 
+Pour la carte nous avons besoin de 2 éléments de choix pour la date et la température à afficher. Voici les codes : 
+
+Choix de la date : 
+
+````
+viewof date_choix = Inputs.date({label: "Date", value: "2023-01-01", min: "2023-01-01", max: "2024-05-21"})
+````
+
+Choix de la variable température à afficher : 
+
+````
+viewof choix_variable = Inputs.radio(["Température min", "Température max"], {label: "Variable à afficher : ", value:"Température min"})
+````
+
+
+Nous calculons ensuite les données du jour en filter sur la date :
+
+````
+meteo_31_date = meteo_31.map(row => ({
+  ...row,
+  date1: convertToDate(row.date)
+}));
+````
+
+Puis : 
+
+````
+donneesDuJour = meteo_31_date.filter(d => d.date1.getTime() === date_choix.getTime())
+````                                                                                                                                                                                                                                                            
+Enfin nous affichons la carte : 
+
+````
+map = {
+  const container = yield htl.html`<div style="height: 500px;">`;
+  const map = L.map(container).setView([43.8927, 1.8828], 7);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd'}).addTo(map);
+  donneesDuJour.forEach(station => {
+  let variable_choisi;
+  if (choix_variable === "Température min") {
+    variable_choisi = station.temp_min;
+  } else {
+    variable_choisi = station.temp_max;
+  }
+  if (variable_choisi !== undefined) {
+      const color = choseColorTemp(variable_choisi);
+      const marker = L.marker([station.lat, station.lon], {
+        icon: L.divIcon({
+                          html: '<div style="background:'+color+';">' + variable_choisi + '°</div>',
+                          iconSize:[40, 20], 
+                          className: 'myIcon'   // Classe CSS pour le style
+        }),
+        zIndexOffset: 1000     // S'assurer que le label est au-dessus des autres couches
+      }).addTo(map);
+    marker.bindPopup(`Station de ${station.nom_poste.charAt(0).toUpperCase() + station.nom_poste.slice(1).toLowerCase()} </br> Température min: ${station.temp_min !== undefined ? station.temp_min + '°C' : '?'}</br> Température max: ${station.temp_max !== undefined ? station.temp_max + '°C' : '?'} </br> Précipitations: ${station.precipitation !== undefined ? station.precipitation + 'mm' : '?'}`);
+    }
+  }  
+    );
+}
+
+````
+
+::::callout-note
+
+Pour créer la carte nous avons un code avec la déclaration de variables et un enchainement de commandes. Nous aurions pu créer plusieurs cellules indépendantes. Nous avons ici fait le choix de tout mettre dans une seule cellule. Dans ce cas il faut encadrer les différentes commandes avec **{}** et le mettre dans une variable.
+
+::::
+
+
+Au final vous obtenez un notebook tel que celui-ci : <https://observablehq.com/@delormeformationinterne/meteo-en-occitanie>
 
 <button type="button" class="btn btn-primary btn-lg">
 

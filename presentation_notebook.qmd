@@ -30,6 +30,6 @@ En résumé, Observable Notebook est idéal pour l’exploration et la collabora
 
 <button type="button" class="btn btn-primary btn-lg">
 
-<a href="creee_premier_notebook.qmd">Suivant</a>
+<a href="creer_premier_notebook.qmd">Suivant</a>
 
 </button>
