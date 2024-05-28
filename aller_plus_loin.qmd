@@ -276,6 +276,179 @@ donneesDuJour.forEach(station => {
 
 ````
 
+
+## Carte avec Krigeage
+
+La carte de température présente les températures pour chaque station météo. Nous aimerions avoir une carte qui estime la température à chaque point du territoire. Pour cela nous allons découper le territoire en carré et estimer la température dans le carré grâce à une fonction de Krigeage
+
+Pour en savoir plus sur le Krigeage : 
+
+-   <https://fr.wikipedia.org/wiki/Krigeage>    
+-   <https://observablehq.com/@fil/kriging>    
+-   <https://hal.science/cel-01081304/document>
+
+Pour utiliser le krigeage dans Observable, nous allons utiliser une librairie que nous installons grâce à la commande : `npm i @sakitam-gis/kriging`.
+
+
+Puis nous ajouter les blocs de code javascript : 
+
+### Création des données à utiliser dans le krigeage
+
+````
+```js
+\\ import de la librairie de Krigeage
+import kriging from '@sakitam-gis/kriging';
+
+
+let donneesDuJourKrig = donneesDuJour;
+\\le krigeage ne peut pas fonctionner avec des données vides. On enlève toutes les lignes où la température est undefined
+  if (choix_variable === "Température min"){
+    donneesDuJourKrig = donneesDuJourKrig.filter(d => d.temp_min !== undefined)
+  }else{
+    donneesDuJourKrig = donneesDuJourKrig.filter(d => d.temp_max !== undefined)
+  }
+
+\\On transforme le array donneesDuJourKrig en objet avec 3 propriétés
+  const n = donneesDuJourKrig.length;
+  const t = new Float32Array(n);
+  const x = new Float32Array(n);
+  const y = new Float32Array(n);
+  for (let i = 0; i < n; i++) {
+    const row = donneesDuJourKrig[i];
+    x[i] = row.lat;
+    y[i] = row.lon;
+    if (choix_variable === "Température min"){
+      t[i] = row.temp_min;
+    }else{
+      t[i] = row.temp_max;
+
+    }
+    
+  }
+  const data_kriging = { t, x, y };
+
+\\On filtre chaque propriété pour enlever les NaN
+  const filteredT = data_kriging.t.filter((_, i) => !isNaN(data_kriging.t[i]));
+  const filteredX = data_kriging.x.filter((_, i) => !isNaN(data_kriging.x[i]));
+  const filteredY = data_kriging.y.filter((_, i) => !isNaN(data_kriging.y[i]));
+
+```
+````
+
+### Entrainement du modèle
+
+Grâce aux données connues, nous pouvons entrainer le modèle : 
+
+
+````
+```js
+const variogram = kriging.train(filteredT, filteredX, filteredY, "Gaussian", .01, 10);
+```
+````
+
+On peut maintenant prédire la température de coordonnées grâce à la fonction `temp = kriging.predict(...coord, variogram);`
+
+### Création de la carte
+
+On utilise de nouveau Leaflet. Pour afficher la carte, nous passons par plusieurs étapes : 
+
+-   création d'une carte avec un fond
+-   création d'une grille sur l'Occitanie et coloration de chaque carré selon le résultat de la prédiction de krigeage
+-   ajout des points pour chaque station météo
+
+Voici le code : 
+
+````
+```js
+
+// Création d'une palette de couleur de -10°C (bleu) à 35°C(Rouge)
+const colorScale = d3.scaleSequential(d3.interpolateRdBu).domain([35, -10]);
+
+// Initialiser la carte Leaflet
+const div = display(document.createElement("div"));
+div.style = "height: 400px;";
+
+// Insérer la carte dans le div
+const map2 = L.map(div)
+  .setView([43.8927, 1.8828], 7);
+
+// Ajouter une couche de tuiles à la carte
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd'}).addTo(map2);
+
+// Ajouter une couche de couleur par température
+const heatLayer = L.layerGroup().addTo(map2);
+
+let minLat = Infinity;
+let maxLat = -Infinity;
+let minLon = Infinity;
+let maxLon = -Infinity;
+
+// limite de la zone à colorer
+  donneesDuJourKrig.forEach(station => {
+    if(station.lat < minLat) minLat = station.lat-0.3;
+    if(station.lat > maxLat) maxLat = station.lat+0.3;
+    if(station.lon < minLon) minLon = station.lon-0.3;
+    if(station.lon > maxLon) maxLon = station.lon+0.3;
+  });
+
+// Création de la grille
+const latStep = 0.07; // pas de la grille en latitude
+const lonStep = 0.07; // pas de la grille en longitude
+
+const gridPoints = [];
+
+  for(let lat = minLat; lat <= maxLat; lat += latStep) {
+    for(let lon = minLon; lon <= maxLon; lon += lonStep) {
+      gridPoints.push([lat, lon]);
+    }
+  }
+
+gridPoints.forEach(coord => {
+  // calcul de la température
+  const temp = kriging.predict(...coord, variogram);
+  // choix de la couleur
+  const color = colorScale(temp);
+  //limite du carreau
+  const bounds = [[coord[0] - latStep / 2, coord[1] - lonStep / 2], [coord[0] + latStep / 2, coord[1] + lonStep / 2]];
+
+  //on regarde si on affiche le carreau : on ne l'affiche pas s'il est trop loin d'une station météo
+  let minDistance = Infinity;
+  let closestStation = null;
+
+  donneesDuJour.forEach(station => {
+    const distance = Math.sqrt((coord[0] - station.lat) ** 2 + (coord[1] - station.lon) ** 2);
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestStation = station;
+    }
+  });
+
+  if (minDistance <= 0.3) {
+    const rectangle = L.rectangle(bounds, {weight: 0, fillColor: color, fillOpacity: 0.9}).addTo(heatLayer);
+    rectangle.bindPopup(`Température prédite: ${temp.toFixed(2)}°C`);
+  }
+});
+
+
+// point blanc pour chaque station météo avec popup
+donneesDuJourKrig.forEach(station => {
+ const marker = L.circleMarker([station.lat, station.lon], {
+    color: 'white',
+    fillColor: '#ffffff',
+    fillOpacity: 1,
+    radius: 1 
+  }).addTo(map2);
+    marker.bindPopup(`Station de ${station.nom_poste.charAt(0).toUpperCase() + station.nom_poste.slice(1).toLowerCase()} </br> 
+Température min: ${station.temp_min !== undefined ? station.temp_min + '°C' : '?'}</br> 
+Température max: ${station.temp_max !== undefined ? station.temp_max + '°C' : '?'} </br> 
+Précipitations: ${station.precipitation !== undefined ? station.precipitation + 'mm' : '?'}`);
+    
+  });
+  ```
+````
+
 <button type="button" class="btn btn-primary btn-lg">
 
 <a href="presentation_notebook.qmd">Suivant</a>

@@ -1,3 +1,13 @@
 ---
 title: "Création d'un premier quarto avec des cellules observable"
 ---
+
+Vous pouvez essayerde refaire un document quarto sur la météo en insérant des chunks Observable. 
+
+Ou (**recommandé**) vous pouvez suivre les tutoriels pas à pas créé par Manhamady Ouedraogo et Nicolas Lambert (**créateur de l'excellente biliothèque Javascript bertin**) :
+
+-   **Excellente** présentation : <https://ee-cist.github.io/CAR2_cartodyn/intro/docs/index.html#/title-slide>
+-   TP1: <https://ee-cist.github.io/CAR2_cartodyn/TP1/docs/index.html>
+-   TP2: <https://ee-cist.github.io/CAR2_cartodyn/TP2/docs/index.html>
+
+![](img/observable_cours.png)

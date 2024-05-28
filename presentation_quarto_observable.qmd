@@ -1,3 +1,17 @@
 ---
 title: "Présentation d'Observable dans quarto"
 ---
+
+En tant qu'utilisateurs de R pour nos activités quotidiennes, nous utilisons régulièrement des documents quarto. Dans un document quarto nous pouvons ajouter des bouts de code (chunks) dans différents langages : R, python... Et aussi des bouts de code **Observable JS**. Il s'agit ici d'utiliser la libraire Observable JS pour ajouter des fonctionnalités interactives aux documents quarto.
+
+A noter : Quarto inclut une prise en charge **native** d’Observable JS (cela veut dire que tout est déjà prêt dans votre RStudio)
+
+En savoir plus : <https://quarto.org/docs/interactive/ojs/>
+
+
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="creer_premier_quarto_observable.qmd">Suivant</a>
+
+</button>

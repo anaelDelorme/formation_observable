@@ -303,12 +303,17 @@ map = {
 
 ::::callout-note
 
-Pour créer la carte nous avons un code avec la déclaration de variables et un enchainement de commandes. Nous aurions pu créer plusieurs cellules indépendantes. Nous avons ici fait le choix de tout mettre dans une seule cellule. Dans ce cas il faut encadrer les différentes commandes avec **{}** et le mettre dans une variable.
+Pour créer la carte nous avons un code avec la déclaration de variables et un enchaînement de commandes. Nous aurions pu créer plusieurs cellules indépendantes. Nous avons ici fait le choix de tout mettre dans une seule cellule. Dans ce cas il faut encadrer les différentes commandes avec **{}** et le mettre dans une variable.
 
 ::::
 
+## Carte avancée : kriging
+
+Reprenez le code de kriging de framework et pour l'import de la librairie de Kriging il suffit de créer une cellule avec `kriging = require("@sakitam-gis/kriging@0.1")`.
+
 
 Au final vous obtenez un notebook tel que celui-ci : <https://observablehq.com/@delormeformationinterne/meteo-en-occitanie>
+
 
 <button type="button" class="btn btn-primary btn-lg">
 

@@ -28,3 +28,9 @@ title: "Liste des sources utiles"
 
 -   <https://leafletjs.com/>
 -   Layers utilisable avec prévisualisation : <https://leaflet-extras.github.io/leaflet-providers/preview/>
+
+## Observable in Quarto 
+
+-   <https://quarto.org/docs/interactive/ojs/>
+-   <https://quarto.org/docs/dashboards/interactivity/observable.html>
+-   <https://observablehq.com/@neocartocnrs/tuto-observable-with-quarto>
