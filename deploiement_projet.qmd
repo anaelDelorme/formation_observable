@@ -55,6 +55,19 @@ Attention : le déploiement et le stockage sur Github impose qu'aucune donnée s
 
 ## Déploiement avec Github Pages
 
+### Premier commit/push
+
+Pour l'instant notre code n'est que dans notre Codespaces. Pour le remonter à Github, il faut faire un commit/push.
+
+Voir ici : <https://docs.github.com/en/codespaces/developing-in-a-codespace/using-source-control-in-your-codespace#committing-your-changes>
+
+### Déposer les fichiers packages
+
+Pour que le déploiement dans Github Pages fonctionne, il faut qu'il y ait les fichiers package.json et package-lock.json à la racine de votre projet. Vous pouvez les télécharger ici : <https://github.com/anaelDelorme/observable_formation_SSP/tree/main/formation> et les importer dans votre codespaces à la racine de votre repo.   
+
+
+Pensez à faire un commit/push pour envoyer les fichiers sur Github.    
+
 ### Création du script de déploiement
 
 Si vous souhaitez publier plusieurs sites observable gratuitement, vous pouvez utiliser la fonctionnalité gratuite de Github qui s'appelle Github Pages. Elle permet de déployer des sites web statiques avec une adresse de type http://votrecompte.github.io/votrerepo/.   
@@ -132,13 +145,17 @@ jobs:
 
 ````
 
-Il vous suffit de lui donner un nom et de cliquer sur Commit :
+Il vous suffit de lui donner un nom sans oublier l'extension **.yml** et de cliquer sur Commit :
 
 ![](img/github_save_yaml.png)
 
 Et de valider :    
 
 ![](img/github_pages_commit.png)
+
+::::callout-tip
+Pensez à faire un pull dans votre codespaces afin de récupérer le fichier créé via l'interface de Github.
+::::
 
 
 ### Vérification du déploiement
@@ -148,7 +165,7 @@ Pour vérifier le déploiement, il faut aller dans l'onglet Actions du repo Gith
 ![](img/gtihub_actions_fail.png)
 
 
-Pour corriger le YAML, je vous conseille d'aller sur Codespaces, dans l'onglet Git de faire un pull pour récupére le fichier créé dans Github. Et vous pouvez le modifier ici et commit/push pour l'envoyer à Github et lancer l'action :
+Pour corriger le YAML, je vous conseille d'aller sur Codespaces, dans l'onglet Git de faire un pull pour récupérer le fichier créé dans Github. Et vous pouvez le modifier ici et commit/push pour l'envoyer à Github et lancer l'action :
 
 ![](img/github_pull.png)
 

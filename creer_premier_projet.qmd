@@ -100,8 +100,8 @@ Un onglet s'ouvre avec votre site Observable en développement, avec les exemple
 
 ## Vérification de la mise à jour automatique
 
--   Aller dans **src** et ouvrez **index.md**.    
--   A la ligne 48, remplacer *Hello* par *Bonjour* et enregistrer (CTRL + S).   
+-   Aller dans **./formation/src** et ouvrez **index.md**.    
+-   A la ligne 49, remplacer *Welcome* par *Salut !* et enregistrer (CTRL + S).   
 -   Vérifier que votre site a bien été mis à jour.
 
 :::callout-tip

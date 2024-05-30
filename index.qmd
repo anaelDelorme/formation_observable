@@ -26,4 +26,11 @@ La formation est prévue en 4 étapes :
 
 Alors, prêts à explorer Observable ? 🌟
 
+
+<button type="button" class="btn btn-primary btn-lg">
+
+<a href="compte_observable.qmd">Commencez ici !</a>
+
+</button>
+
 [![Générée par Copilot](dataViz_agri.jpg){fig-align="center"}](https://copilot.microsoft.com/)

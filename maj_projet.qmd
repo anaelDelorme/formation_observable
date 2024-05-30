@@ -12,7 +12,7 @@ Vous pouvez mettre le code suivant :
 ````
 # Météo en Occitanie
 
-```{js}
+```js
 display(1 + 2);
 
 ``` 
@@ -21,6 +21,10 @@ display(1 + 2);
 Ce qui affichera : 
 
 ![](img/create_page.png)
+
+:::callout-tip
+Pour actualiser votre page et afficher la nouvelle page dans le menu de gauche, vous pouvez cliquer sur le nom du site affiché en haut à gauche de la page.
+:::
 
 :::callout-note
 Si votre codespaces n'est plus actif, veuillez le relancer. Et pour relancer le site en dev, tapez dans la console : `npm run dev` dans le répertoire `hello-framework`
@@ -32,11 +36,11 @@ Pour en savoir plus sur le markdown en Observable : [Markdown en observable](all
 
 ## Chargement de données
 
-Je vous propose de travailler sur les données de météofrance pour les départements d'Occitanie en 2023 et 2024. Vous trouverez les données sur Github : <https://github.com/anaelDelorme/observable_formation_SSP/blob/main/formation/src/data/>. Pour télécharger les données, ilfaut cliquer sur le fichier puis cliquer sur le bouton `download raw`.        
+Je vous propose de travailler sur les données de météofrance pour les départements d'Occitanie en 2023 et 2024. Vous trouverez les données sur Github : <https://github.com/anaelDelorme/observable_formation_SSP/blob/main/formation/src/data/>. Pour télécharger les données, il faut cliquer sur le fichier ce qui va l'ouvrir. Puis cliquer sur le bouton `download raw file` dans la bar en haut à droite (icon de téléchargement).        
 
 Pour commencer, télécharger uniquement les données pour la Haute-Garonne.        
 
-Puis déposer le fichier dans votre site observable : `src/data/`.   
+Puis déposer le fichier dans votre site observable : `formation/src/data/` (par exemple en faisant un glisser déposer).
 
 Dans le fichier meteo.md, nous allons charger les données. Pour cela nous utilisons la fonction `FileAttachment`. Cette fonction est chargée par défaut. Elle propose plusieurs méthodes (par exemple) :     
 
@@ -156,7 +160,7 @@ En Javascript les données au format date ne peuvent pas être comparées via un
 :::
 
 Puis j'écris une phrase directement en markdown en faisant référence aux données grâce au caractère **$**. Par exemple :     
-`Les températures minimale et maximale pour la station ${nom_poste_recherche} à la date du ${dateFormatee} sont ${objetTrouve.temp_min}°C et ${objetTrouve.temp_max}°C.`
+`Les températures minimale et maximale pour la station ${nom_poste_recherche} à la date du ${dateString} sont ${objetTrouve.temp_min}°C et ${objetTrouve.temp_max}°C.`
 
 
 ## Création d'un tableau
@@ -376,7 +380,7 @@ Voici le code pour une liste déroulante simple :
 const nomsStations = Array.from(new Set(meteo_31_2023_2024_extrait.map(d => d.nom_poste)));
 
 //On met ça dans un Inputs.select et un view pour l'afficher
-const color = view(Inputs.select(nomsStations, {label: "Choisir une station météo"}));
+const nomsStations_choix = view(Inputs.select(nomsStations, {label: "Choisir une station météo"}));
 
 ```
 ````
@@ -416,32 +420,74 @@ Essayer cette balise pour mettre dedans un tableau, un graphique ou une carte.
 Il n'est pas possible de mettre du code js dans une balise div. Il faut créer une fonction dans un bloc js en dehors de la div, et l'appeler dans la div. Voici un exemple : 
 ````
 ```js
-function launchTimeline(data, {width} = {}) {
+// Filtrer les données pour le poste choisi
+const donneesFiltrees = meteo.filter(d => d.nom_poste === nomsStations_choix.nom_poste);
+
+// Créer un graphique combiné pour temp_min et temp_max
+function graphiqueTemp(data, {width}) {
   return Plot.plot({
-    title: "Launches over the years",
     width,
-    height: 300,
-    y: {grid: true, label: "Launches"},
-    color: {...color, legend: true},
+  title: "Températures minimales et maximales pour "+nomsStations_choix.nom_poste_formate+" ("+nomsStations_choix.code_departement+")",
+  y: {grid: true, inset: 10, label: "Température (°C)"},
+  marks: [
+    Plot.lineY(data, {
+      x: "date",
+      y: "temp_min",
+      stroke: "steelblue",
+      label: "Temp. min",
+      k: 10, 
+      reduce: "mean"
+    }),
+    Plot.lineY(data, {
+      x: "date",
+      y: "temp_max",
+      stroke: "tomato",
+      label: "Temp. max",
+      k: 10, 
+      reduce: "mean"
+    })
+  ]
+})};
+
+
+function graphiquePrecipitation(data, {width}) {
+  return Plot.plot({
+      width,title: "Précipitations pour "+nomsStations_choix.nom_poste_formate+" ("+nomsStations_choix.code_departement+")",
+    y: {grid: true, label: "Précipitations (mm)"},
+    x: {
+      grid: true,
+      label: "Date",
+      // Utiliser une fonction pour filtrer les ticks pour afficher un tick tous les 3 mois
+      ticks: d3.utcMonth.every(3)
+    },
     marks: [
-      Plot.rectY(data, Plot.binX({y: "count"}, {x: "date", fill: "state", interval: "year", tip: true})),
+      Plot.barY(donneesFiltrees, {
+        x: "date",
+        y: "precipitation",
+        fill: "darkslateblue"
+            }),
       Plot.ruleY([0])
     ]
   });
 }
 ```
 
-<div class="grid grid-cols-1">
+<div class="grid grid-cols-2">
   <div class="card">
-    ${resize((width) => launchTimeline(launches, {width}))}
+    ${resize((width) => graphiqueTemp(donneesFiltrees, {width}))}
+
+  </div>
+  <div class="card">    
+    ${resize((width) => graphiquePrecipitation(donneesFiltrees, {width}))}
   </div>
 </div>
+
 ````
 :::
 
 ### Grille
 
-Une grille va contenir des cartes. Il est possible d'indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes : 
+Une grille va contenir des cartes (les cartes sont des boîtes d'affichage permettant d'afficher des données, des graphs, des cartes...) . Il est possible d'indiquer le nombre de colonnes de la page. Par exemple, si on veut 4 colonnes : 
 
 ````
 <div class="grid grid-cols-4">
