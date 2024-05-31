@@ -1,0 +1,14 @@
+---
+title: "Une image pour bien comprendre"
+---
+
+Dans cette formation, nous allons nous attaquer à plusieurs outils que vous ne connaissez pas. Ces outils ont des interactions entre eux. Nous avons essayé de les représenter sur cette image pour que ce soit plus simple pour vous : 
+
+![Schéma général](img/Observable.png){fig-align="center"}
+
+
+
+<button type="button" class="btn btn-primary btn-lg">
+  <a href="compte_observable.qmd">Suivant</a>
+</button>
+

@@ -33,6 +33,8 @@ website:
       contents:
         - section: "Pré-requis"
           contents:
+            - href: schema_global.qmd
+              text: "Vue d'ensemble"
             - href: compte_observable.qmd
               text: "Compte observable"
             - href: github.qmd
