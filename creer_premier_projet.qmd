@@ -112,6 +112,15 @@ Si vous avez fermé l'onglet qui contient votre site de dev, vous pouvez le réo
 Actuellement votre site n'est pas disponible sur internet. Ce n'est qu'une prévisualisation. Le site est accessible uniquement temporairement sur un serveur temporaire de votre codespaces (en localhost ou 127.0.0.1 de votre codespaces).
 :::
 
+## Pour aller plus loin: comment repartir d'un projet ObservableHQ existant ?
+
+Dans la formation, nous partons d'un projet ObservableHQ vide que nous créons grâce à la commande: **npm init "@observablehq"**. Mais il peut arriver que l'on reparte d'un projet existant que l'on souhaite mettre à jour. Dans ce cas, il faut : 
+
+-    récupérer les sources du projet
+-    dans un terminal lancer **npm install** ce qui permet de récupérer toutes les librairies utiles au lancement du site (dont observablehq).
+-    vérifier que tout se passe bien grâce à **npm run dev**
+
+
 <button type="button" class="btn btn-primary btn-lg">
   <a href="maj_projet.qmd">Suivant</a>
 </button>
